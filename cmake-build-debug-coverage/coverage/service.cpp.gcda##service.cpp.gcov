@@ -1,0 +1,2819 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/service.cpp
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#include <cassert>
+        -:    6:#include <random>
+        -:    7:#include <algorithm>
+        -:    8:#include <fstream>
+        -:    9:#include "service.h"
+        -:   10:
+        -:   11:
+        -:   12:
+        -:   13:/// Add an activity
+        -:   14:/// \param title string
+        -:   15:/// \param description string
+        -:   16:/// \param type string
+        -:   17:/// \param duration int
+function _ZN7Service10serviceAddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 23 returned 100% blocks executed 47%
+       23:   18:void Service::serviceAdd(const string& title, const string& description, const string& type, int duration) {
+        -:   19:    Validator valid;
+       23:   20:    valid.validateActivity(title, description, type, duration);
+       23:   20-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   20-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:   20-block  2
+call    6 returned 23
+branch  7 taken 23 (fallthrough)
+branch  8 taken 0 (throw)
+       23:   20-block  3
+call    9 returned 23
+branch 10 taken 23 (fallthrough)
+branch 11 taken 0 (throw)
+       23:   20-block  4
+call   12 returned 23
+call   13 returned 23
+call   14 returned 23
+    $$$$$:   20-block  5
+call   15 never executed
+    $$$$$:   20-block  6
+    $$$$$:   20-block  7
+call   16 never executed
+    $$$$$:   20-block  8
+    $$$$$:   20-block  9
+call   17 never executed
+    $$$$$:   20-block 10
+        -:   21:
+       46:   22:    Activity activity(title, description, type, duration);
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   22-block  0
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:   22-block  1
+call    6 returned 23
+branch  7 taken 23 (fallthrough)
+branch  8 taken 0 (throw)
+       23:   22-block  2
+call    9 returned 23
+branch 10 taken 23 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 23
+call   13 returned 23
+    $$$$$:   22-block  3
+    $$$$$:   22-block  4
+    $$$$$:   22-block  5
+        -:   23:
+       23:   24:    repo.add(activity);
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   25:    report[activity.getType()]++;
+       23:   25-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   25-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:   25-block  2
+call    6 returned 23
+    $$$$$:   25-block  3
+call    7 never executed
+    $$$$$:   25-block  4
+       23:   26:    undoActions.push_back(make_unique<UndoAdd>(repo, activity));
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   26-block  0
+call    3 returned 23
+call    4 returned 23
+branch  5 taken 23 (fallthrough)
+branch  6 taken 0 (throw)
+       23:   26-block  1
+call    7 returned 23
+call    8 returned 23
+    $$$$$:   26-block  2
+call    9 never executed
+    $$$$$:   26-block  3
+    $$$$$:   26-block  4
+call   10 never executed
+    $$$$$:   26-block  5
+       23:   27:}
+call    0 returned 23
+    $$$$$:   27-block  0
+call    1 never executed
+        -:   28:
+        -:   29:/// Get all activities
+        -:   30:/// \return List of activities
+function _ZN7Service13serviceGetAllEv called 5 returned 100% blocks executed 100%
+        5:   31:const vector<Activity> &Service::serviceGetAll() {
+        5:   32:    return repo.getAll();
+        5:   32-block  0
+call    0 returned 5
+        -:   33:}
+        -:   34:
+        -:   35:/// Delete an activity
+        -:   36:/// \param title string
+        -:   37:/// \param description string
+        -:   38:/// \param type string
+        -:   39:/// \param duration int
+function _ZN7Service13serviceDeleteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 2 returned 100% blocks executed 47%
+        2:   40:void Service::serviceDelete(const string& title, const string& description, const string& type, int duration) {
+        -:   41:    Validator valid;
+        2:   42:    valid.validateActivity(title, description, type, duration);
+        2:   42-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   42-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   42-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   42-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   42-block  4
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+    $$$$$:   42-block  5
+call   15 never executed
+    $$$$$:   42-block  6
+    $$$$$:   42-block  7
+call   16 never executed
+    $$$$$:   42-block  8
+    $$$$$:   42-block  9
+call   17 never executed
+    $$$$$:   42-block 10
+        -:   43:
+        4:   44:    Activity activity(title, description, type, duration);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   44-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   44-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   44-block  2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 2
+call   13 returned 2
+    $$$$$:   44-block  3
+    $$$$$:   44-block  4
+    $$$$$:   44-block  5
+        2:   45:    auto ac_type = serviceSearch(title).getType();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   45-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   45-block  1
+        -:   46:
+        2:   47:    repo.del(activity);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   48:
+        2:   49:    report[ac_type]--;
+        2:   49-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   50:
+        2:   51:    undoActions.push_back(make_unique<UndoDelete>(repo, activity));
+        2:   51-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   51-block  1
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   51-block  2
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   51-block  3
+call    9 never executed
+    $$$$$:   51-block  4
+    $$$$$:   51-block  5
+call   10 never executed
+    $$$$$:   51-block  6
+        2:   52:}
+call    0 returned 2
+call    1 returned 2
+    $$$$$:   52-block  0
+call    2 never executed
+    $$$$$:   52-block  1
+call    3 never executed
+        -:   53:
+        -:   54:
+        -:   55:/// Modify an activity
+        -:   56:/// \param title string
+        -:   57:/// \param description string
+        -:   58:/// \param type string
+        -:   59:/// \param duration int
+function _ZN7Service13serviceModifyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 2 returned 100% blocks executed 49%
+        2:   60:void Service::serviceModify(const string& title, const string& description, const string& type, int duration) {
+        -:   61:    Validator valid;
+        2:   62:    valid.validateActivity(title, description, type, duration);
+        2:   62-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   62-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   62-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   62-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   62-block  4
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+    $$$$$:   62-block  5
+call   15 never executed
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+call   16 never executed
+    $$$$$:   62-block  8
+    $$$$$:   62-block  9
+call   17 never executed
+    $$$$$:   62-block 10
+        -:   63:
+        4:   64:    Activity activity(title, description, type, duration);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   64-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   64-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   64-block  2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 2
+call   13 returned 2
+    $$$$$:   64-block  3
+    $$$$$:   64-block  4
+    $$$$$:   64-block  5
+        2:   65:    auto old_activity = repo.search(activity.getTitle());
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   65-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   65-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   65-block  2
+        2:   66:    auto old_type = old_activity.getType();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   67:
+        2:   68:    repo.modify(activity);
+        2:   68-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   69:
+        2:   70:    report[old_type]--;
+        2:   70-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   71:    report[activity.getType()]++;
+        2:   71-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   71-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   71-block  2
+call    6 returned 2
+    $$$$$:   71-block  3
+call    7 never executed
+    $$$$$:   71-block  4
+        -:   72:
+        2:   73:    undoActions.push_back(make_unique<UndoModify>(repo, old_activity));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   73-block  0
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   73-block  1
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   73-block  2
+call    9 never executed
+    $$$$$:   73-block  3
+    $$$$$:   73-block  4
+call   10 never executed
+    $$$$$:   73-block  5
+        2:   74:}
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+    $$$$$:   74-block  0
+call    3 never executed
+    $$$$$:   74-block  1
+call    4 never executed
+    $$$$$:   74-block  2
+call    5 never executed
+        -:   75:
+        -:   76:/// Search an activity
+        -:   77:/// \param title
+        -:   78:/// \return
+function _ZN7Service13serviceSearchERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 53%
+        4:   79:Activity Service::serviceSearch(const string& title){
+        -:   80:    Validator valid;
+        4:   81:    valid.validateActivity(title, "description", "type", 1);
+        4:   81-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   81-block  1
+call    4 returned 4
+call    5 returned 4
+branch  6 taken 4 (fallthrough)
+branch  7 taken 0 (throw)
+        4:   81-block  2
+call    8 returned 4
+branch  9 taken 4 (fallthrough)
+branch 10 taken 0 (throw)
+        4:   81-block  3
+call   11 returned 4
+branch 12 taken 4 (fallthrough)
+branch 13 taken 0 (throw)
+        4:   81-block  4
+call   14 returned 4
+call   15 returned 4
+call   16 returned 4
+call   17 returned 4
+call   18 returned 4
+    $$$$$:   81-block  5
+call   19 never executed
+    $$$$$:   81-block  6
+    $$$$$:   81-block  7
+call   20 never executed
+    $$$$$:   81-block  8
+    $$$$$:   81-block  9
+call   21 never executed
+    $$$$$:   81-block 10
+    $$$$$:   81-block 11
+call   22 never executed
+    $$$$$:   81-block 12
+    $$$$$:   81-block 13
+call   23 never executed
+    $$$$$:   81-block 14
+        -:   82:
+        8:   83:    return repo.search(title);
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   83-block  0
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:   83-block  1
+        -:   84:}
+        -:   85:
+        -:   86:/// Filter activities by type
+        -:   87:/// \param type
+        -:   88:/// \return
+function _ZN7Service24serviceGetFilteredByTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 73%
+        1:   89:vector<Activity> Service::serviceGetFilteredByType(const string& type){
+        1:   90:    vector<Activity> rez;
+        1:   90-block  0
+call    0 returned 1
+        1:   91:    vector activities = repo.getAll();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   92:    rez.resize(activities.size());
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+function _ZZN7Service24serviceGetFilteredByTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK8ActivityE_clESA_ called 2 returned 100% blocks executed 100%
+        1:   93:    auto end_it = copy_if(activities.begin(), activities.end(), rez.begin(), [type] (const Activity &activity) {
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   93-block  2
+call    9 returned 1
+    $$$$$:   93-block  3
+call   10 never executed
+    $$$$$:   93-block  4
+        2:   94:        return type == activity.getType();
+        2:   94-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        -:   95:    });
+        1:   96:    rez.resize(distance(rez.begin(), end_it));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   96-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   97:    return rez;
+        1:   97-block  0
+        1:   97-block  1
+        1:   98:}
+        1:   98-block  0
+call    0 returned 1
+    $$$$$:   98-block  1
+call    1 never executed
+    $$$$$:   98-block  2
+call    2 never executed
+        -:   99:
+function _Z8cmpTitleRK8ActivityS1_ called 3 returned 100% blocks executed 83%
+        3:  100:int cmpTitle(const Activity& a, const Activity& b) {
+        3:  101:    if (a.getTitle() < b.getTitle())
+        3:  101-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  101-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 1 (fallthrough)
+branch  8 taken 2
+    $$$$$:  101-block  2
+call    9 never executed
+        1:  102:        return 1;
+        1:  102-block  0
+        2:  103:    return 0;
+        2:  103-block  0
+        -:  104:}
+        -:  105:
+function _Z14cmpDescriptionRK8ActivityS1_ called 3 returned 100% blocks executed 83%
+        3:  106:int cmpDescription(const Activity& a, const Activity& b){
+        3:  107:    if(a.getDescription() < b.getDescription())
+        3:  107-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  107-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 1 (fallthrough)
+branch  8 taken 2
+    $$$$$:  107-block  2
+call    9 never executed
+        1:  108:        return 1;
+        1:  108-block  0
+        2:  109:    return 0;
+        2:  109-block  0
+        -:  110:}
+function _Z7cmpTypeRK8ActivityS1_ called 4 returned 100% blocks executed 80%
+        4:  111:int cmpType(const Activity& a, const Activity& b){
+        4:  112:    if(a.getType() < b.getType())
+        4:  112-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:  112-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+branch  7 taken 1 (fallthrough)
+branch  8 taken 3
+    $$$$$:  112-block  2
+call    9 never executed
+    $$$$$:  112-block  3
+call   10 never executed
+        1:  113:        return 1;
+        1:  113-block  0
+        3:  114:    else if(a.getType() == b.getType())
+        3:  114-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  114-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 1 (fallthrough)
+branch  8 taken 2
+    $$$$$:  114-block  2
+call    9 never executed
+        1:  115:        if(a.getDuration() < b.getDuration())
+        1:  115-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:  116:            return 1;
+        1:  116-block  0
+        2:  117:    return 0;
+        2:  117-block  0
+        -:  118:}
+        -:  119:
+        -:  120:
+        -:  121:/// Sory activities by title
+        -:  122:/// \return
+function _ZN7Service20serviceSortedByTitleEv called 2 returned 100% blocks executed 92%
+        2:  123:vector<Activity> Service::serviceSortedByTitle() {
+        2:  124:    vector<Activity> rez = repo.getAll();
+        2:  124-block  0
+call    0 returned 2
+call    1 returned 2
+        -:  125:
+        2:  126:    sort(rez.begin(), rez.end(), cmpTitle);
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:  127:    if (!rez.empty())
+        2:  127-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:  128:        return rez;
+        1:  128-block  0
+        1:  128-block  1
+        -:  129:
+        1:  130:}
+        1:  130-block  0
+    $$$$$:  130-block  1
+call    0 never executed
+        -:  131:
+        -:  132:
+        -:  133:/// Sort activities by description
+        -:  134:/// \return
+function _ZN7Service26serviceSortedByDescriptionEv called 2 returned 100% blocks executed 92%
+        2:  135:vector<Activity> Service::serviceSortedByDescription(){
+        2:  136:    vector<Activity> rez = repo.getAll();
+        2:  136-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  137:    sort(rez.begin(), rez.end(), cmpDescription);
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:  138:    if (!rez.empty())
+        2:  138-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:  139:        return rez;
+        1:  139-block  0
+        1:  139-block  1
+        1:  140:}
+        1:  140-block  0
+    $$$$$:  140-block  1
+call    0 never executed
+        -:  141:
+        -:  142:/// Sort activities by type and duration
+        -:  143:/// \return
+function _ZN7Service30serviceSortedByTypeAndDurationEv called 2 returned 100% blocks executed 92%
+        2:  144:vector<Activity> Service::serviceSortedByTypeAndDuration(){
+        2:  145:    vector<Activity> rez = repo.getAll();
+        2:  145-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  146:    sort(rez.begin(), rez.end(), cmpType);
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        -:  147:
+        2:  148:    if (!rez.empty())
+        2:  148-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:  149:        return rez;
+        1:  149-block  0
+        1:  149-block  1
+        1:  150:}
+        1:  150-block  0
+    $$$$$:  150-block  1
+call    0 never executed
+        -:  151:
+        -:  152:
+        -:  153:/// Add activity to current list
+        -:  154:/// \param title string
+        -:  155:/// \return size of Current list of activities
+function _ZN7Service25serviceAddCurrentActivityERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 54%
+        2:  156:int Service::serviceAddCurrentActivity(const string& title){
+        -:  157:    Validator valid;
+        2:  158:    valid.validateActivity(title,"description","type",1);
+        2:  158-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  158-block  1
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:  158-block  2
+call    8 returned 2
+branch  9 taken 2 (fallthrough)
+branch 10 taken 0 (throw)
+        2:  158-block  3
+call   11 returned 2
+branch 12 taken 2 (fallthrough)
+branch 13 taken 0 (throw)
+        2:  158-block  4
+call   14 returned 2
+call   15 returned 2
+call   16 returned 2
+call   17 returned 2
+call   18 returned 2
+    $$$$$:  158-block  5
+call   19 never executed
+    $$$$$:  158-block  6
+    $$$$$:  158-block  7
+call   20 never executed
+    $$$$$:  158-block  8
+    $$$$$:  158-block  9
+call   21 never executed
+    $$$$$:  158-block 10
+    $$$$$:  158-block 11
+call   22 never executed
+    $$$$$:  158-block 12
+    $$$$$:  158-block 13
+call   23 never executed
+    $$$$$:  158-block 14
+        -:  159:
+        2:  160:    auto activity = repo.search(title);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  160-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  161:    schedule.add(activity);
+        2:  161-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  162:
+        4:  163:    return schedule.size();
+        2:  163-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  163-block  1
+        2:  163-block  2
+        2:  164:}
+        2:  164-block  0
+call    0 returned 2
+    $$$$$:  164-block  1
+call    1 never executed
+        -:  165:
+        -:  166:/// Delete list of current activities
+        -:  167:/// \return size of Current list of activities
+function _ZN7Service30serviceDeleteCurrentActivitiesEv called 1 returned 100% blocks executed 100%
+        1:  168:int Service::serviceDeleteCurrentActivities(){
+        1:  169:    schedule.clear();
+        1:  169-block  0
+call    0 returned 1
+        1:  170:    return schedule.size();
+call    0 returned 1
+        -:  171:}
+        -:  172:
+        -:  173:
+        -:  174:/// Generate activities to current list
+        -:  175:/// \param title string
+        -:  176:/// \return size of Current list of activities
+function _ZN7Service32serviceGenerateCurrentActivitiesEi called 2 returned 100% blocks executed 69%
+        2:  177:int Service::serviceGenerateCurrentActivities(int nr){
+        2:  178:    auto activities = repo.getAll();
+        2:  178-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  178-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  179:    schedule.generate(nr, activities);
+        2:  179-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  179-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  179-block  2
+call    6 returned 2
+    $$$$$:  179-block  3
+call    7 never executed
+    $$$$$:  179-block  4
+        4:  180:    return schedule.size();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  180-block  0
+        2:  180-block  1
+        2:  181:}
+        2:  181-block  0
+call    0 returned 2
+    $$$$$:  181-block  1
+call    1 never executed
+        -:  182:
+        -:  183:/// Activities type report
+        -:  184:/// \return unordered map of activities type
+function _ZN7Service17serviceTypeReportB5cxx11Ev called 1 returned 100% blocks executed 100%
+        1:  185:unordered_map<string, int> Service::serviceTypeReport(){
+        1:  186:    return report;
+        1:  186-block  0
+call    0 returned 1
+        -:  187:}
+        -:  188:
+        -:  189:/// Export to cvs
+        -:  190:/// \param fName
+function _ZNK7Service35serviceExportCurrentActivitiesToCVSERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 100%
+        2:  191:void Service::serviceExportCurrentActivitiesToCVS(const string& fName) const {
+        2:  192:    exportToCVS(fName, schedule.list());
+        2:  192-block  0
+call    0 returned 2
+call    1 returned 1
+        1:  193:}
+        -:  194:
+        -:  195:/// Export to html
+        -:  196:/// \param fName
+function _ZNK7Service36serviceExportCurrentActivitiesToHTMLERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 100%
+        2:  197:void Service::serviceExportCurrentActivitiesToHTML(const string& fName) const {
+        2:  198:    exportToHTML(fName, schedule.list());
+        2:  198-block  0
+call    0 returned 2
+call    1 returned 1
+        1:  199:}
+        -:  200:
+        -:  201:/// Undo last action
+function _ZN7Service11serviceUndoEv called 6 returned 83% blocks executed 68%
+        6:  202:void Service::serviceUndo(){
+        6:  203:    if(undoActions.empty())
+        6:  203-block  0
+call    0 returned 6
+branch  1 taken 1 (fallthrough)
+branch  2 taken 5
+        1:  204:        throw Exception("Nothing to undo");
+        1:  204-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  204-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  204-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  204-block  3
+call   11 never executed
+    $$$$$:  204-block  4
+    $$$$$:  204-block  5
+call   12 never executed
+    $$$$$:  204-block  6
+    $$$$$:  204-block  7
+call   13 never executed
+        5:  205:    undoActions.back()->doUndo();
+        5:  205-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        5:  206:    undoActions.pop_back();
+call    0 returned 5
+        5:  207:}
+        -:  208:
+        -:  209:
+        -:  210://tests
+function _Z14testServiceAddv called 1 returned 100% blocks executed 49%
+        1:  211:void testServiceAdd() {
+        1:  212:    Repository repo;
+        1:  212-block  0
+call    0 returned 1
+        1:  213:    Service serv(repo);
+call    0 returned 1
+        -:  214:
+        1:  215:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  215-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  215-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  215-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  215-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  215-block  4
+call   21 never executed
+    $$$$$:  215-block  5
+    $$$$$:  215-block  6
+call   22 never executed
+    $$$$$:  215-block  7
+    $$$$$:  215-block  8
+call   23 never executed
+    $$$$$:  215-block  9
+    $$$$$:  215-block 10
+call   24 never executed
+    $$$$$:  215-block 11
+    $$$$$:  215-block 12
+call   25 never executed
+    $$$$$:  215-block 13
+    $$$$$:  215-block 14
+call   26 never executed
+    $$$$$:  215-block 15
+        1:  216:    const auto &activities = serv.serviceGetAll();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  217:    assert(activities.size() == 1);
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  217-block  1
+call    3 never executed
+        -:  218:
+        1:  219:}
+        1:  219-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  219-block  1
+call    2 never executed
+    $$$$$:  219-block  2
+call    3 never executed
+        -:  220:
+function _Z17testServiceDeletev called 1 returned 100% blocks executed 46%
+        1:  221:void testServiceDelete() {
+        1:  222:    Repository repo;
+        1:  222-block  0
+call    0 returned 1
+        1:  223:    Service serv(repo);
+call    0 returned 1
+        -:  224:
+        1:  225:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  225-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  225-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  225-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  225-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  225-block  4
+call   21 never executed
+    $$$$$:  225-block  5
+    $$$$$:  225-block  6
+call   22 never executed
+    $$$$$:  225-block  7
+    $$$$$:  225-block  8
+call   23 never executed
+    $$$$$:  225-block  9
+    $$$$$:  225-block 10
+call   24 never executed
+    $$$$$:  225-block 11
+    $$$$$:  225-block 12
+call   25 never executed
+    $$$$$:  225-block 13
+    $$$$$:  225-block 14
+call   26 never executed
+    $$$$$:  225-block 15
+        1:  226:    serv.serviceDelete("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  226-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  226-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  226-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  226-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  226-block  4
+call   21 never executed
+    $$$$$:  226-block  5
+    $$$$$:  226-block  6
+call   22 never executed
+    $$$$$:  226-block  7
+    $$$$$:  226-block  8
+call   23 never executed
+    $$$$$:  226-block  9
+    $$$$$:  226-block 10
+call   24 never executed
+    $$$$$:  226-block 11
+    $$$$$:  226-block 12
+call   25 never executed
+    $$$$$:  226-block 13
+    $$$$$:  226-block 14
+call   26 never executed
+    $$$$$:  226-block 15
+        1:  227:    const auto &activities = serv.serviceGetAll();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  228:    assert(activities.empty());
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  228-block  1
+call    3 never executed
+        1:  229:}
+        1:  229-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  229-block  1
+call    2 never executed
+    $$$$$:  229-block  2
+call    3 never executed
+        -:  230:
+function _Z17testServiceModifyv called 1 returned 100% blocks executed 46%
+        1:  231:void testServiceModify() {
+        1:  232:    Repository repo;
+        1:  232-block  0
+call    0 returned 1
+        1:  233:    Service serv(repo);
+call    0 returned 1
+        -:  234:
+        1:  235:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  235-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  235-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  235-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  235-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  235-block  4
+call   21 never executed
+    $$$$$:  235-block  5
+    $$$$$:  235-block  6
+call   22 never executed
+    $$$$$:  235-block  7
+    $$$$$:  235-block  8
+call   23 never executed
+    $$$$$:  235-block  9
+    $$$$$:  235-block 10
+call   24 never executed
+    $$$$$:  235-block 11
+    $$$$$:  235-block 12
+call   25 never executed
+    $$$$$:  235-block 13
+    $$$$$:  235-block 14
+call   26 never executed
+    $$$$$:  235-block 15
+        1:  236:    serv.serviceModify("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  236-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  236-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  236-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  236-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  236-block  4
+call   21 never executed
+    $$$$$:  236-block  5
+    $$$$$:  236-block  6
+call   22 never executed
+    $$$$$:  236-block  7
+    $$$$$:  236-block  8
+call   23 never executed
+    $$$$$:  236-block  9
+    $$$$$:  236-block 10
+call   24 never executed
+    $$$$$:  236-block 11
+    $$$$$:  236-block 12
+call   25 never executed
+    $$$$$:  236-block 13
+    $$$$$:  236-block 14
+call   26 never executed
+    $$$$$:  236-block 15
+        1:  237:    const auto &activities = serv.serviceGetAll();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  238:    assert(activities.size() == 1);
+        1:  238-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  238-block  1
+call    3 never executed
+        1:  239:}
+        1:  239-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  239-block  1
+call    2 never executed
+    $$$$$:  239-block  2
+call    3 never executed
+        -:  240:
+function _Z17testServiceSearchv called 1 returned 100% blocks executed 46%
+        1:  241:void testServiceSearch() {
+        1:  242:    Repository repo;
+        1:  242-block  0
+call    0 returned 1
+        1:  243:    Service serv(repo);
+call    0 returned 1
+        -:  244:
+        2:  245:    Activity a("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  245-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  245-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  245-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  245-block  3
+    $$$$$:  245-block  4
+    $$$$$:  245-block  5
+    $$$$$:  245-block  6
+    $$$$$:  245-block  7
+    $$$$$:  245-block  8
+        1:  246:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  246-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  246-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  246-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  246-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  246-block  4
+call   21 never executed
+    $$$$$:  246-block  5
+    $$$$$:  246-block  6
+call   22 never executed
+    $$$$$:  246-block  7
+    $$$$$:  246-block  8
+call   23 never executed
+    $$$$$:  246-block  9
+    $$$$$:  246-block 10
+call   24 never executed
+    $$$$$:  246-block 11
+    $$$$$:  246-block 12
+call   25 never executed
+    $$$$$:  246-block 13
+    $$$$$:  246-block 14
+call   26 never executed
+    $$$$$:  246-block 15
+        2:  247:    Activity a_found = serv.serviceSearch("a");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  247-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  247-block  1
+    $$$$$:  247-block  2
+       1*:  248:    assert(a_found == a);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  248-block  0
+call    3 never executed
+        1:  249:}
+        1:  249-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  249-block  1
+call    4 never executed
+    $$$$$:  249-block  2
+call    5 never executed
+    $$$$$:  249-block  3
+call    6 never executed
+        -:  250:
+function _Z17testServiceFilterv called 1 returned 100% blocks executed 46%
+        1:  251:void testServiceFilter(){
+        1:  252:    Repository repo;
+        1:  252-block  0
+call    0 returned 1
+        1:  253:    Service serv(repo);
+call    0 returned 1
+        1:  254:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  254-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  254-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  254-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  254-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  254-block  4
+call   21 never executed
+    $$$$$:  254-block  5
+    $$$$$:  254-block  6
+call   22 never executed
+    $$$$$:  254-block  7
+    $$$$$:  254-block  8
+call   23 never executed
+    $$$$$:  254-block  9
+    $$$$$:  254-block 10
+call   24 never executed
+    $$$$$:  254-block 11
+    $$$$$:  254-block 12
+call   25 never executed
+    $$$$$:  254-block 13
+    $$$$$:  254-block 14
+call   26 never executed
+    $$$$$:  254-block 15
+        1:  255:    serv.serviceAdd("b", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  255-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  255-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  255-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  255-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  255-block  4
+call   21 never executed
+    $$$$$:  255-block  5
+    $$$$$:  255-block  6
+call   22 never executed
+    $$$$$:  255-block  7
+    $$$$$:  255-block  8
+call   23 never executed
+    $$$$$:  255-block  9
+    $$$$$:  255-block 10
+call   24 never executed
+    $$$$$:  255-block 11
+    $$$$$:  255-block 12
+call   25 never executed
+    $$$$$:  255-block 13
+    $$$$$:  255-block 14
+call   26 never executed
+    $$$$$:  255-block 15
+        2:  256:    vector<Activity> list = serv.serviceGetFilteredByType("a");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  256-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  256-block  1
+    $$$$$:  256-block  2
+       1*:  257:    assert(list.size() == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  257-block  0
+call    3 never executed
+        1:  258:}
+        1:  258-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  258-block  1
+call    3 never executed
+    $$$$$:  258-block  2
+call    4 never executed
+        -:  259:
+function _Z8testSortv called 1 returned 100% blocks executed 53%
+        1:  260:void testSort(){
+        1:  261:    Repository repo;
+        1:  261-block  0
+call    0 returned 1
+        1:  262:    Service serv(repo);
+call    0 returned 1
+        -:  263:
+        1:  264:    vector sorted = serv.serviceSortedByTitle();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  265:    assert(sorted.empty());
+        1:  265-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  265-block  1
+call    3 never executed
+        1:  266:    sorted = serv.serviceSortedByDescription();
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  266-block  1
+call    3 returned 1
+call    4 returned 1
+       1*:  267:    assert(sorted.empty());
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  267-block  0
+call    3 never executed
+        1:  268:    sorted = serv.serviceSortedByTypeAndDuration();
+        1:  268-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  268-block  1
+call    3 returned 1
+call    4 returned 1
+       1*:  269:    assert(sorted.empty());
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  269-block  0
+call    3 never executed
+        -:  270:
+        -:  271:
+        1:  272:    serv.serviceAdd("b", "y", "b", 2);
+        1:  272-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  272-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  272-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  272-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  272-block  4
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  272-block  5
+call   21 never executed
+    $$$$$:  272-block  6
+    $$$$$:  272-block  7
+call   22 never executed
+    $$$$$:  272-block  8
+    $$$$$:  272-block  9
+call   23 never executed
+    $$$$$:  272-block 10
+    $$$$$:  272-block 11
+call   24 never executed
+    $$$$$:  272-block 12
+    $$$$$:  272-block 13
+call   25 never executed
+    $$$$$:  272-block 14
+    $$$$$:  272-block 15
+call   26 never executed
+    $$$$$:  272-block 16
+        1:  273:    serv.serviceAdd("c", "z", "a", 2);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  273-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  273-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  273-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  273-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  273-block  4
+call   21 never executed
+    $$$$$:  273-block  5
+    $$$$$:  273-block  6
+call   22 never executed
+    $$$$$:  273-block  7
+    $$$$$:  273-block  8
+call   23 never executed
+    $$$$$:  273-block  9
+    $$$$$:  273-block 10
+call   24 never executed
+    $$$$$:  273-block 11
+    $$$$$:  273-block 12
+call   25 never executed
+    $$$$$:  273-block 13
+    $$$$$:  273-block 14
+call   26 never executed
+    $$$$$:  273-block 15
+        1:  274:    serv.serviceAdd("a", "x", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  274-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  274-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  274-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  274-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  274-block  4
+call   21 never executed
+    $$$$$:  274-block  5
+    $$$$$:  274-block  6
+call   22 never executed
+    $$$$$:  274-block  7
+    $$$$$:  274-block  8
+call   23 never executed
+    $$$$$:  274-block  9
+    $$$$$:  274-block 10
+call   24 never executed
+    $$$$$:  274-block 11
+    $$$$$:  274-block 12
+call   25 never executed
+    $$$$$:  274-block 13
+    $$$$$:  274-block 14
+call   26 never executed
+    $$$$$:  274-block 15
+        1:  275:    sorted = serv.serviceSortedByTitle();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  275-block  0
+call    3 returned 1
+call    4 returned 1
+       1*:  276:    assert(sorted[0].getTitle() == "a");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  276-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  276-block  1
+call    7 never executed
+        1:  276-block  2
+call    8 returned 1
+       1*:  277:    assert(sorted.size() == 3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  277-block  0
+call    3 never executed
+        -:  278:
+        1:  279:    sorted = serv.serviceSortedByDescription();
+        1:  279-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  279-block  1
+call    3 returned 1
+call    4 returned 1
+       1*:  280:    assert(sorted[2].getDescription() == "z");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  280-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  280-block  1
+call    7 never executed
+        1:  280-block  2
+call    8 returned 1
+        -:  281:
+        1:  282:    serv.serviceAdd("r", "x", "c", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  282-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  282-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  282-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  282-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  282-block  4
+call   21 never executed
+    $$$$$:  282-block  5
+    $$$$$:  282-block  6
+call   22 never executed
+    $$$$$:  282-block  7
+    $$$$$:  282-block  8
+call   23 never executed
+    $$$$$:  282-block  9
+    $$$$$:  282-block 10
+call   24 never executed
+    $$$$$:  282-block 11
+    $$$$$:  282-block 12
+call   25 never executed
+    $$$$$:  282-block 13
+    $$$$$:  282-block 14
+call   26 never executed
+    $$$$$:  282-block 15
+        1:  283:    sorted = serv.serviceSortedByTypeAndDuration();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  283-block  0
+call    3 returned 1
+call    4 returned 1
+        -:  284:
+       1*:  285:    assert(sorted[0].getDuration() == 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  285-block  0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  285-block  1
+call    6 never executed
+        1:  286:}
+        1:  286-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  286-block  1
+call    3 never executed
+    $$$$$:  286-block  2
+call    4 never executed
+    $$$$$:  286-block  3
+call    5 never executed
+        -:  287:
+function _Z21testServiceAddCurrentv called 1 returned 100% blocks executed 45%
+        1:  288:void testServiceAddCurrent(){
+        1:  289:    Repository repo;
+        1:  289-block  0
+call    0 returned 1
+        1:  290:    Service serv(repo);
+call    0 returned 1
+        1:  291:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  291-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  291-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  291-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  291-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  291-block  4
+call   21 never executed
+    $$$$$:  291-block  5
+    $$$$$:  291-block  6
+call   22 never executed
+    $$$$$:  291-block  7
+    $$$$$:  291-block  8
+call   23 never executed
+    $$$$$:  291-block  9
+    $$$$$:  291-block 10
+call   24 never executed
+    $$$$$:  291-block 11
+    $$$$$:  291-block 12
+call   25 never executed
+    $$$$$:  291-block 13
+    $$$$$:  291-block 14
+call   26 never executed
+    $$$$$:  291-block 15
+        1:  292:    serv.serviceAdd("b", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  292-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  292-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  292-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  292-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  292-block  4
+call   21 never executed
+    $$$$$:  292-block  5
+    $$$$$:  292-block  6
+call   22 never executed
+    $$$$$:  292-block  7
+    $$$$$:  292-block  8
+call   23 never executed
+    $$$$$:  292-block  9
+    $$$$$:  292-block 10
+call   24 never executed
+    $$$$$:  292-block 11
+    $$$$$:  292-block 12
+call   25 never executed
+    $$$$$:  292-block 13
+    $$$$$:  292-block 14
+call   26 never executed
+    $$$$$:  292-block 15
+        1:  293:    auto size = serv.serviceAddCurrentActivity("a");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  293-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  293-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  293-block  2
+call    9 never executed
+    $$$$$:  293-block  3
+    $$$$$:  293-block  4
+call   10 never executed
+    $$$$$:  293-block  5
+       1*:  294:    assert(size == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  294-block  0
+call    2 never executed
+        1:  295:}
+        1:  295-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  295-block  1
+call    2 never executed
+    $$$$$:  295-block  2
+call    3 never executed
+        -:  296:
+function _Z24testServiceDeleteCurrentv called 1 returned 100% blocks executed 45%
+        1:  297:void testServiceDeleteCurrent(){
+        1:  298:    Repository repo;
+        1:  298-block  0
+call    0 returned 1
+        1:  299:    Service serv(repo);
+call    0 returned 1
+        1:  300:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  300-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  300-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  300-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  300-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  300-block  4
+call   21 never executed
+    $$$$$:  300-block  5
+    $$$$$:  300-block  6
+call   22 never executed
+    $$$$$:  300-block  7
+    $$$$$:  300-block  8
+call   23 never executed
+    $$$$$:  300-block  9
+    $$$$$:  300-block 10
+call   24 never executed
+    $$$$$:  300-block 11
+    $$$$$:  300-block 12
+call   25 never executed
+    $$$$$:  300-block 13
+    $$$$$:  300-block 14
+call   26 never executed
+    $$$$$:  300-block 15
+        1:  301:    serv.serviceAdd("b", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  301-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  301-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  301-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  301-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  301-block  4
+call   21 never executed
+    $$$$$:  301-block  5
+    $$$$$:  301-block  6
+call   22 never executed
+    $$$$$:  301-block  7
+    $$$$$:  301-block  8
+call   23 never executed
+    $$$$$:  301-block  9
+    $$$$$:  301-block 10
+call   24 never executed
+    $$$$$:  301-block 11
+    $$$$$:  301-block 12
+call   25 never executed
+    $$$$$:  301-block 13
+    $$$$$:  301-block 14
+call   26 never executed
+    $$$$$:  301-block 15
+        1:  302:    serv.serviceAddCurrentActivity("a");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  302-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  302-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  302-block  2
+call    9 never executed
+    $$$$$:  302-block  3
+    $$$$$:  302-block  4
+call   10 never executed
+    $$$$$:  302-block  5
+        1:  303:    auto size = serv.serviceDeleteCurrentActivities();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  304:    assert(!size);
+        1:  304-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  304-block  1
+call    2 never executed
+        1:  305:}
+        1:  305-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  305-block  1
+call    2 never executed
+    $$$$$:  305-block  2
+call    3 never executed
+        -:  306:
+function _Z26testServiceGenerateCurrentv called 1 returned 100% blocks executed 45%
+        1:  307:void testServiceGenerateCurrent(){
+        1:  308:    Repository repo;
+        1:  308-block  0
+call    0 returned 1
+        1:  309:    Service serv(repo);
+call    0 returned 1
+        1:  310:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  310-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  310-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  310-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  310-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  310-block  4
+call   21 never executed
+    $$$$$:  310-block  5
+    $$$$$:  310-block  6
+call   22 never executed
+    $$$$$:  310-block  7
+    $$$$$:  310-block  8
+call   23 never executed
+    $$$$$:  310-block  9
+    $$$$$:  310-block 10
+call   24 never executed
+    $$$$$:  310-block 11
+    $$$$$:  310-block 12
+call   25 never executed
+    $$$$$:  310-block 13
+    $$$$$:  310-block 14
+call   26 never executed
+    $$$$$:  310-block 15
+        1:  311:    serv.serviceAdd("b", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  311-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  311-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  311-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  311-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  311-block  4
+call   21 never executed
+    $$$$$:  311-block  5
+    $$$$$:  311-block  6
+call   22 never executed
+    $$$$$:  311-block  7
+    $$$$$:  311-block  8
+call   23 never executed
+    $$$$$:  311-block  9
+    $$$$$:  311-block 10
+call   24 never executed
+    $$$$$:  311-block 11
+    $$$$$:  311-block 12
+call   25 never executed
+    $$$$$:  311-block 13
+    $$$$$:  311-block 14
+call   26 never executed
+    $$$$$:  311-block 15
+        1:  312:    auto size = serv.serviceGenerateCurrentActivities(4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  313:    assert(size == 4);
+        1:  313-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  313-block  1
+call    2 never executed
+        1:  314:}
+        1:  314-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  314-block  1
+call    2 never executed
+    $$$$$:  314-block  2
+call    3 never executed
+        -:  315:
+function _Z17testServiceReportv called 1 returned 100% blocks executed 50%
+        1:  316:void testServiceReport(){
+        1:  317:    Repository repo;
+        1:  317-block  0
+call    0 returned 1
+        1:  318:    Service serv(repo);
+call    0 returned 1
+        -:  319:
+        1:  320:    serv.serviceAdd("a", "a", "a", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  320-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  320-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  320-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  320-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  320-block  4
+call   21 never executed
+    $$$$$:  320-block  5
+    $$$$$:  320-block  6
+call   22 never executed
+    $$$$$:  320-block  7
+    $$$$$:  320-block  8
+call   23 never executed
+    $$$$$:  320-block  9
+    $$$$$:  320-block 10
+call   24 never executed
+    $$$$$:  320-block 11
+    $$$$$:  320-block 12
+call   25 never executed
+    $$$$$:  320-block 13
+    $$$$$:  320-block 14
+call   26 never executed
+    $$$$$:  320-block 15
+        1:  321:    const auto &activities = serv.serviceTypeReport();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  322:    assert(activities.size() == 1);
+        1:  322-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  322-block  1
+call    3 never executed
+        -:  323:
+        1:  324:}
+        1:  324-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  324-block  1
+call    3 never executed
+    $$$$$:  324-block  2
+call    4 never executed
+        -:  325:
+function _Z17testServiceExportv called 1 returned 100% blocks executed 53%
+        1:  326:void testServiceExport(){
+        1:  327:    Repository repo;
+        1:  327-block  0
+call    0 returned 1
+        1:  328:    Service serv(repo);
+call    0 returned 1
+        1:  329:    serv.serviceAdd("aaa", "bbb","ccc", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  329-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  329-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  329-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  329-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  329-block  4
+call   21 never executed
+    $$$$$:  329-block  5
+    $$$$$:  329-block  6
+call   22 never executed
+    $$$$$:  329-block  7
+    $$$$$:  329-block  8
+call   23 never executed
+    $$$$$:  329-block  9
+    $$$$$:  329-block 10
+call   24 never executed
+    $$$$$:  329-block 11
+    $$$$$:  329-block 12
+call   25 never executed
+    $$$$$:  329-block 13
+    $$$$$:  329-block 14
+call   26 never executed
+    $$$$$:  329-block 15
+        1:  330:    serv.serviceAdd("ccc", "bbb","aaa", 2);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  330-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  330-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  330-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  330-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  330-block  4
+call   21 never executed
+    $$$$$:  330-block  5
+    $$$$$:  330-block  6
+call   22 never executed
+    $$$$$:  330-block  7
+    $$$$$:  330-block  8
+call   23 never executed
+    $$$$$:  330-block  9
+    $$$$$:  330-block 10
+call   24 never executed
+    $$$$$:  330-block 11
+    $$$$$:  330-block 12
+call   25 never executed
+    $$$$$:  330-block 13
+    $$$$$:  330-block 14
+call   26 never executed
+    $$$$$:  330-block 15
+        1:  331:    serv.serviceAdd("bbb", "bbb","bbb", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  331-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  331-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  331-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  331-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  331-block  4
+call   21 never executed
+    $$$$$:  331-block  5
+    $$$$$:  331-block  6
+call   22 never executed
+    $$$$$:  331-block  7
+    $$$$$:  331-block  8
+call   23 never executed
+    $$$$$:  331-block  9
+    $$$$$:  331-block 10
+call   24 never executed
+    $$$$$:  331-block 11
+    $$$$$:  331-block 12
+call   25 never executed
+    $$$$$:  331-block 13
+    $$$$$:  331-block 14
+call   26 never executed
+    $$$$$:  331-block 15
+        1:  332:    serv.serviceGenerateCurrentActivities(3);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  333:    serv.serviceExportCurrentActivitiesToCVS("test.cvs");
+        1:  333-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  333-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  333-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  333-block  3
+call    9 never executed
+    $$$$$:  333-block  4
+    $$$$$:  333-block  5
+call   10 never executed
+    $$$$$:  333-block  6
+        1:  334:    std::ifstream in("test.cvs");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  335:    assert(in.is_open());
+        1:  335-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  335-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  335-block  2
+call    5 never executed
+        1:  336:    int countLines = 0;
+        5:  337:    while (!in.eof()) {
+        1:  337-block  0
+        5:  337-block  1
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  337-block  2
+branch  3 taken 4
+branch  4 taken 1 (fallthrough)
+        4:  338:        string line;
+        4:  338-block  0
+call    0 returned 4
+        4:  339:        in >> line;
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  340:        countLines++;
+        4:  341:    }
+        4:  341-block  0
+call    0 returned 4
+    $$$$$:  341-block  1
+call    1 never executed
+        1:  342:    in.close();
+        1:  342-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  343:    assert(countLines == 4);//+ blank line
+        1:  343-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  343-block  1
+call    2 never executed
+        1:  344:    serv.serviceExportCurrentActivitiesToHTML("test.html");
+        1:  344-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  344-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  344-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  344-block  3
+call    9 never executed
+    $$$$$:  344-block  4
+    $$$$$:  344-block  5
+call   10 never executed
+    $$$$$:  344-block  6
+        1:  345:    in.open("test.html");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  346:    assert(in.is_open());
+        1:  346-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  346-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  346-block  2
+call    5 never executed
+        -:  347:
+        -:  348:
+        -:  349:    try {
+       3*:  350:        serv.serviceExportCurrentActivitiesToCVS("test/Export.cvs");
+        1:  350-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  350-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  350-block  2
+call    7 never executed
+call    8 never executed
+        1:  350-block  3
+call    9 returned 1
+        1:  350-block  4
+        1:  350-block  5
+call   10 returned 1
+        1:  350-block  6
+        -:  351:    }
+        1:  352:    catch (Exception&) {
+        1:  352-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  352-block  1
+call    2 returned 1
+        -:  353:        assert(true);
+        1:  354:    }
+call    0 returned 1
+        -:  355:    try {
+       3*:  356:        serv.serviceExportCurrentActivitiesToHTML("a/b/c/Export.html");
+        1:  356-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  356-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  356-block  2
+call    7 never executed
+call    8 never executed
+        1:  356-block  3
+call    9 returned 1
+        1:  356-block  4
+        1:  356-block  5
+call   10 returned 1
+        1:  356-block  6
+        -:  357:    }
+        1:  358:    catch (Exception&) {
+        1:  358-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  358-block  1
+call    2 returned 1
+        -:  359:        assert(true);
+        1:  360:    }
+call    0 returned 1
+        1:  361:}
+        1:  361-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  361-block  1
+call    3 never executed
+    $$$$$:  361-block  2
+call    4 never executed
+    $$$$$:  361-block  3
+call    5 never executed
+        -:  362:
+function _Z15testServiceUndov called 1 returned 100% blocks executed 48%
+        1:  363:void testServiceUndo(){
+        1:  364:    Repository repo;
+        1:  364-block  0
+call    0 returned 1
+        1:  365:    Service serv(repo);
+call    0 returned 1
+        1:  366:    serv.serviceAdd("aaa", "bbb","ccc", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  366-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  366-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  366-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  366-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  366-block  4
+call   21 never executed
+    $$$$$:  366-block  5
+    $$$$$:  366-block  6
+call   22 never executed
+    $$$$$:  366-block  7
+    $$$$$:  366-block  8
+call   23 never executed
+    $$$$$:  366-block  9
+    $$$$$:  366-block 10
+call   24 never executed
+    $$$$$:  366-block 11
+    $$$$$:  366-block 12
+call   25 never executed
+    $$$$$:  366-block 13
+    $$$$$:  366-block 14
+call   26 never executed
+    $$$$$:  366-block 15
+        1:  367:    serv.serviceAdd("ccc", "bbb","aaa", 2);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  367-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  367-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  367-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  367-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  367-block  4
+call   21 never executed
+    $$$$$:  367-block  5
+    $$$$$:  367-block  6
+call   22 never executed
+    $$$$$:  367-block  7
+    $$$$$:  367-block  8
+call   23 never executed
+    $$$$$:  367-block  9
+    $$$$$:  367-block 10
+call   24 never executed
+    $$$$$:  367-block 11
+    $$$$$:  367-block 12
+call   25 never executed
+    $$$$$:  367-block 13
+    $$$$$:  367-block 14
+call   26 never executed
+    $$$$$:  367-block 15
+        1:  368:    serv.serviceAdd("bbb", "bbb","bbb", 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  368-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  368-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  368-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  368-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  368-block  4
+call   21 never executed
+    $$$$$:  368-block  5
+    $$$$$:  368-block  6
+call   22 never executed
+    $$$$$:  368-block  7
+    $$$$$:  368-block  8
+call   23 never executed
+    $$$$$:  368-block  9
+    $$$$$:  368-block 10
+call   24 never executed
+    $$$$$:  368-block 11
+    $$$$$:  368-block 12
+call   25 never executed
+    $$$$$:  368-block 13
+    $$$$$:  368-block 14
+call   26 never executed
+    $$$$$:  368-block 15
+        1:  369:    serv.serviceUndo();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  370:    assert(serv.serviceGetAll().size() == 2);
+        1:  370-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  370-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  370-block  2
+call    6 never executed
+        1:  371:    serv.serviceDelete("aaa", "bbb","ccc", 3);
+        1:  371-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  371-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  371-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  371-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  371-block  4
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  371-block  5
+call   21 never executed
+    $$$$$:  371-block  6
+    $$$$$:  371-block  7
+call   22 never executed
+    $$$$$:  371-block  8
+    $$$$$:  371-block  9
+call   23 never executed
+    $$$$$:  371-block 10
+    $$$$$:  371-block 11
+call   24 never executed
+    $$$$$:  371-block 12
+    $$$$$:  371-block 13
+call   25 never executed
+    $$$$$:  371-block 14
+    $$$$$:  371-block 15
+call   26 never executed
+    $$$$$:  371-block 16
+        1:  372:    serv.serviceUndo();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  373:    serv.serviceModify("aaa", "nnn","nnn", 2);
+        1:  373-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  373-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  373-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  373-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  373-block  4
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  373-block  5
+call   21 never executed
+    $$$$$:  373-block  6
+    $$$$$:  373-block  7
+call   22 never executed
+    $$$$$:  373-block  8
+    $$$$$:  373-block  9
+call   23 never executed
+    $$$$$:  373-block 10
+    $$$$$:  373-block 11
+call   24 never executed
+    $$$$$:  373-block 12
+    $$$$$:  373-block 13
+call   25 never executed
+    $$$$$:  373-block 14
+    $$$$$:  373-block 15
+call   26 never executed
+    $$$$$:  373-block 16
+        1:  374:    serv.serviceUndo();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  375:    assert(serv.serviceSearch("aaa").getDescription() == "bbb");
+        1:  375-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  375-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  375-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  375-block  3
+call   10 returned 1
+branch 11 taken 0 (fallthrough)
+branch 12 taken 1
+    %%%%%:  375-block  4
+call   13 never executed
+        1:  375-block  5
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  375-block  6
+call   18 never executed
+    $$$$$:  375-block  7
+    $$$$$:  375-block  8
+call   19 never executed
+    $$$$$:  375-block  9
+    $$$$$:  375-block 10
+call   20 never executed
+    $$$$$:  375-block 11
+        1:  376:    serv.serviceUndo();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  377:    serv.serviceUndo();
+        1:  377-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  378:    assert(serv.serviceGetAll().empty());
+        1:  378-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  378-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  378-block  2
+call    6 never executed
+        -:  379:    try {
+        1:  380:        serv.serviceUndo();
+        1:  380-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  381:    }
+        1:  382:    catch (Exception& exception) {
+        1:  382-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  382-block  1
+call    2 returned 1
+        1:  383:        assert(exception.getMessage() == "Nothing to undo");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  383-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  383-block  1
+call    6 never executed
+        1:  383-block  2
+call    7 returned 1
+        1:  384:    }
+call    0 returned 1
+    $$$$$:  384-block  0
+call    1 never executed
+        1:  385:}
+        1:  385-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  385-block  1
+call    2 never executed
+    $$$$$:  385-block  2
+call    3 never executed

@@ -1,0 +1,2410 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/repository.cpp
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/repository.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#include "repository.h"
+        -:    6:#include <cassert>
+        -:    7:#include <algorithm>
+        -:    8:#include <fstream>
+        -:    9:
+        -:   10:/// Add an element
+        -:   11:/// \param activity
+function _ZN10Repository3addERK8Activity called 38 returned 95% blocks executed 62%
+       38:   12:void Repository::add(const Activity &activity) {
+function _ZZN10Repository3addERK8ActivityENKUlS2_E_clES2_ called 23 returned 100% blocks executed 100%
+       38:   13:    auto rez = find_if(activities.begin(),activities.end(), [title= activity.getTitle()](const Activity &a) {
+       38:   13-block  0
+call    0 returned 38
+branch  1 taken 38 (fallthrough)
+branch  2 taken 0 (throw)
+       38:   13-block  1
+call    3 returned 38
+call    4 returned 38
+call    5 returned 38
+branch  6 taken 38 (fallthrough)
+branch  7 taken 0 (throw)
+       38:   13-block  2
+call    8 returned 38
+    $$$$$:   13-block  3
+call    9 never executed
+    $$$$$:   13-block  4
+       23:   14:        return title == a.getTitle();
+       23:   14-block  0
+call    0 returned 23
+call    1 returned 23
+call    2 returned 23
+        -:   15:    });
+       38:   16:    if(rez != activities.end()){
+call    0 returned 38
+call    1 returned 38
+branch  2 taken 2 (fallthrough)
+branch  3 taken 36
+        2:   17:        throw Exception("existing activity\n");
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   17-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   17-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:   17-block  3
+call   11 never executed
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+call   12 never executed
+    $$$$$:   17-block  6
+    $$$$$:   17-block  7
+call   13 never executed
+        -:   18:    }
+       36:   19:    activities.push_back(activity);
+       36:   19-block  0
+call    0 returned 36
+branch  1 taken 36 (fallthrough)
+branch  2 taken 0 (throw)
+       36:   20:}
+       36:   20-block  0
+        -:   21:
+        -:   22:/// Get position of an element in list
+        -:   23:/// \param activity
+        -:   24:/// \return position
+function _ZN10Repository11getPositionER8Activity called 3 returned 100% blocks executed 88%
+        3:   25:int Repository::getPosition(Activity &activity) {
+        4:   26:    for (int i = 0; i < (int)activities.size(); i++) {
+        3:   26-block  0
+        1:   26-block  1
+        4:   26-block  2
+call    0 returned 4
+branch  1 taken 3
+branch  2 taken 1 (fallthrough)
+        3:   27:        Activity &a = activities[i];
+        3:   27-block  0
+call    0 returned 3
+        3:   28:        if (a.getTitle() == activity.getTitle())
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   28-block  0
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 2 (fallthrough)
+branch  8 taken 1
+    $$$$$:   28-block  1
+call    9 never executed
+        2:   29:            return i;
+        2:   29-block  0
+        -:   30:    }
+        1:   31:    return -1;
+        1:   31-block  0
+        -:   32:}
+        -:   33:
+        -:   34:/// Delete an element
+        -:   35:/// \param activity
+function _ZN10Repository3delERK8Activity called 11 returned 73% blocks executed 61%
+       11:   36:void Repository::del(const Activity &activity) {
+function _ZZN10Repository3delERK8ActivityENKUlS2_E_clES2_ called 12 returned 100% blocks executed 100%
+       11:   37:    auto rez = find_if(activities.begin(),activities.end(), [title= activity.getTitle()](const Activity &a) {
+       11:   37-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   37-block  1
+call    3 returned 11
+call    4 returned 11
+call    5 returned 11
+branch  6 taken 11 (fallthrough)
+branch  7 taken 0 (throw)
+       11:   37-block  2
+call    8 returned 11
+    $$$$$:   37-block  3
+call    9 never executed
+    $$$$$:   37-block  4
+       12:   38:        return title == a.getTitle();
+       12:   38-block  0
+call    0 returned 12
+call    1 returned 12
+call    2 returned 12
+        -:   39:    });
+       11:   40:    if(rez == activities.end()){
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 3 (fallthrough)
+branch  3 taken 8
+        3:   41:        throw Exception("non existing activity\n");
+        3:   41-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:   41-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   41-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 3
+    $$$$$:   41-block  3
+call   11 never executed
+    $$$$$:   41-block  4
+    $$$$$:   41-block  5
+call   12 never executed
+    $$$$$:   41-block  6
+    $$$$$:   41-block  7
+call   13 never executed
+        -:   42:    }
+        8:   43:    activities.erase(rez);
+        8:   43-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   43-block  1
+        8:   44:}
+        8:   44-block  0
+        -:   45:
+        -:   46:
+        -:   47:/// Modify an element in list
+        -:   48:/// \param activity - Activity
+function _ZN10Repository6modifyERK8Activity called 7 returned 71% blocks executed 62%
+        7:   49:void Repository::modify(const Activity &activity) {
+function _ZZN10Repository6modifyERK8ActivityENKUlS2_E_clES2_ called 9 returned 100% blocks executed 100%
+        7:   50:    auto rez = find_if(activities.begin(),activities.end(), [title= activity.getTitle()](const Activity &a) {
+        7:   50-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   50-block  1
+call    3 returned 7
+call    4 returned 7
+call    5 returned 7
+branch  6 taken 7 (fallthrough)
+branch  7 taken 0 (throw)
+        7:   50-block  2
+call    8 returned 7
+    $$$$$:   50-block  3
+call    9 never executed
+    $$$$$:   50-block  4
+        9:   51:        return title == a.getTitle();
+        9:   51-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        -:   52:    });
+        7:   53:    if(rez == activities.end()){
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 2 (fallthrough)
+branch  3 taken 5
+        2:   54:        throw Exception("non existing activity\n");
+        2:   54-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   54-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   54-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:   54-block  3
+call   11 never executed
+    $$$$$:   54-block  4
+    $$$$$:   54-block  5
+call   12 never executed
+    $$$$$:   54-block  6
+    $$$$$:   54-block  7
+call   13 never executed
+        -:   55:    }
+        5:   56:    activities.erase(rez);
+        5:   56-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   56-block  1
+        5:   57:    activities.push_back(activity);
+        5:   57-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   58:}
+        5:   58-block  0
+        -:   59:
+        -:   60:/// Search for an element
+        -:   61:/// \param title string
+        -:   62:/// \return Activity
+function _ZN10Repository6searchERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 10 returned 90% blocks executed 63%
+       10:   63:const Activity& Repository::search(const string& title){
+function _ZZN10Repository6searchERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK8ActivityE_clESA_ called 12 returned 100% blocks executed 100%
+       10:   64:    auto rez = find_if(activities.begin(),activities.end(), [title] (const Activity &activity) {
+       10:   64-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   64-block  1
+call    3 returned 10
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 10 (fallthrough)
+branch  7 taken 0 (throw)
+       10:   64-block  2
+call    8 returned 10
+    $$$$$:   64-block  3
+call    9 never executed
+    $$$$$:   64-block  4
+       12:   65:        return title == activity.getTitle();
+       12:   65-block  0
+call    0 returned 12
+call    1 returned 12
+call    2 returned 12
+        -:   66:    });
+       10:   67:    if(rez == activities.end()){
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 1 (fallthrough)
+branch  3 taken 9
+        1:   68:        throw Exception("non existing activity\n");
+        1:   68-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   68-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   68-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   68-block  3
+call   11 never executed
+    $$$$$:   68-block  4
+    $$$$$:   68-block  5
+call   12 never executed
+    $$$$$:   68-block  6
+    $$$$$:   68-block  7
+call   13 never executed
+        -:   69:    }
+       18:   70:    return *rez;
+        9:   70-block  0
+call    0 returned 9
+        9:   70-block  1
+        -:   71:}
+        -:   72:
+        -:   73:/// Get all elements
+        -:   74:/// \return list of elements
+function _ZN10Repository6getAllEv called 27 returned 100% blocks executed 100%
+       27:   75:const vector<Activity> &Repository::getAll() {
+       27:   76:    return activities;
+       27:   76-block  0
+        -:   77:}
+        -:   78:
+        -:   79:/// Add to file
+        -:   80:/// \param activity
+function _ZN14FileRepository3addERK8Activity called 6 returned 67% blocks executed 100%
+        6:   81:void FileRepository::add(const Activity &activity){
+        6:   82:    Repository::add(activity);
+        6:   82-block  0
+call    0 returned 5
+        5:   83:    writeToFile();
+call    0 returned 4
+        4:   84:}
+        -:   85:
+        -:   86:/// Delete from file
+        -:   87:/// \param activity
+function _ZN14FileRepository3delERK8Activity called 2 returned 50% blocks executed 100%
+        2:   88:void FileRepository::del(const Activity &activity){
+        2:   89:    Repository::del(activity);
+        2:   89-block  0
+call    0 returned 1
+        1:   90:    writeToFile();
+call    0 returned 1
+        1:   91:}
+        -:   92:
+        -:   93:/// Modify from file
+        -:   94:/// \param activity
+function _ZN14FileRepository6modifyERK8Activity called 2 returned 50% blocks executed 100%
+        2:   95:void FileRepository::modify(const Activity &activity) {
+        2:   96:    Repository::modify(activity);
+        2:   96-block  0
+call    0 returned 1
+        1:   97:    writeToFile();
+call    0 returned 1
+        1:   98:}
+        -:   99:
+        -:  100:
+        -:  101:/// Write to file
+function _ZN14FileRepository11writeToFileEv called 7 returned 86% blocks executed 67%
+        7:  102:void FileRepository::writeToFile() {
+        7:  103:    ifstream check(filename);
+        7:  103-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  104:    if (!check.good()) {
+        7:  104-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  104-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 6
+        -:  105:        // Verify if the file is opened
+        1:  106:        throw Exception("Unable to open file " + filename);
+        1:  106-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  106-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  106-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  106-block  3
+call    9 never executed
+    $$$$$:  106-block  4
+    $$$$$:  106-block  5
+call   10 never executed
+        -:  107:    }else {
+        6:  108:        ofstream out(filename);
+        6:  108-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+       11:  109:        for (const auto &activity: Repository::getAll()) {
+        6:  109-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+        5:  109-block  1
+call    3 returned 5
+       11:  109-block  2
+call    4 returned 11
+branch  5 taken 5
+branch  6 taken 6 (fallthrough)
+       10:  110:            out << activity.getTitle() << " "
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+    $$$$$:  110-block  0
+call    4 never executed
+    $$$$$:  110-block  1
+        5:  111:                << activity.getDescription() << " "
+call    0 returned 5
+    $$$$$:  111-block  0
+call    1 never executed
+    $$$$$:  111-block  1
+       10:  112:                << activity.getType() << " "
+        5:  112-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  112-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  112-block  2
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  112-block  3
+call    9 returned 5
+branch 10 taken 5 (fallthrough)
+branch 11 taken 0 (throw)
+        5:  112-block  4
+call   12 returned 5
+branch 13 taken 5 (fallthrough)
+branch 14 taken 0 (throw)
+        5:  112-block  5
+call   15 returned 5
+branch 16 taken 5 (fallthrough)
+branch 17 taken 0 (throw)
+        5:  112-block  6
+call   18 returned 5
+branch 19 taken 5 (fallthrough)
+branch 20 taken 0 (throw)
+        5:  112-block  7
+call   21 returned 5
+branch 22 taken 5 (fallthrough)
+branch 23 taken 0 (throw)
+        5:  112-block  8
+call   24 returned 5
+call   25 returned 5
+    $$$$$:  112-block  9
+call   26 never executed
+    $$$$$:  112-block 10
+        5:  113:                << activity.getDuration() << "\n";
+        5:  113-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  113-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  113-block  2
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        -:  114:        }
+        6:  115:    }
+        6:  115-block  0
+call    0 returned 6
+    $$$$$:  115-block  1
+call    1 never executed
+        7:  116:}
+call    0 returned 6
+        1:  116-block  0
+call    1 returned 1
+        -:  117:
+        -:  118:/// Clear file
+function _ZN14FileRepository9clearFileEv called 5 returned 80% blocks executed 67%
+        5:  119:void FileRepository::clearFile() {
+        5:  120:    ifstream check(filename);
+        5:  120-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  121:    if (!check.good()) {
+        5:  121-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  121-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 4
+        -:  122:        // Verify if the file is opened
+        1:  123:        throw Exception("Unable to open file " + filename);
+        1:  123-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  123-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  123-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  123-block  3
+call    9 never executed
+    $$$$$:  123-block  4
+    $$$$$:  123-block  5
+call   10 never executed
+        -:  124:    }else{
+        4:  125:        ofstream out(filename);
+        4:  125-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  126:        out << "";
+        4:  126-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  127:    }
+        4:  127-block  0
+call    0 returned 4
+    $$$$$:  127-block  1
+call    1 never executed
+        5:  128:}
+call    0 returned 4
+        1:  128-block  0
+call    1 returned 1
+        -:  129:
+function _ZN14FileRepository7setFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 5 returned 100% blocks executed 100%
+        5:  130:void FileRepository::setFile(const string& file){
+        5:  131:    filename = file;
+        5:  131-block  0
+call    0 returned 5
+        5:  132:}
+        -:  133:
+        -:  134:/// Add to second repo
+        -:  135:/// \param activity
+function _ZN14ProbRepository3addERK8Activity called 6 returned 67% blocks executed 53%
+        6:  136:void ProbRepository::add(const Activity &activity){
+        6:  137:    if(probability > 0.5){
+        6:  137-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+        1:  138:        throw Exception("Probability too high( >0.5)");
+        1:  138-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  138-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  138-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  138-block  3
+call   11 never executed
+    $$$$$:  138-block  4
+    $$$$$:  138-block  5
+call   12 never executed
+    $$$$$:  138-block  6
+    $$$$$:  138-block  7
+call   13 never executed
+        -:  139:    }
+        5:  140:    auto iter = activities.find(activity.getTitle());
+        5:  140-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  140-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  140-block  2
+call    6 returned 5
+    $$$$$:  140-block  3
+call    7 never executed
+    $$$$$:  140-block  4
+        5:  141:    if(iter != activities.end()){
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 1 (fallthrough)
+branch  3 taken 4
+        1:  142:        throw Exception("existing activity\n");
+        1:  142-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  142-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  142-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  142-block  3
+call   11 never executed
+    $$$$$:  142-block  4
+    $$$$$:  142-block  5
+call   12 never executed
+    $$$$$:  142-block  6
+    $$$$$:  142-block  7
+call   13 never executed
+        -:  143:    }
+        4:  144:    activities.insert({activity.getTitle(), activity});
+        4:  144-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  144-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  144-block  2
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:  144-block  3
+call    9 returned 4
+call   10 returned 4
+    $$$$$:  144-block  4
+call   11 never executed
+    $$$$$:  144-block  5
+    $$$$$:  144-block  6
+call   12 never executed
+    $$$$$:  144-block  7
+        4:  145:}
+        -:  146:
+        -:  147:/// Delete from second repo
+        -:  148:/// \param activity
+function _ZN14ProbRepository3delERK8Activity called 3 returned 33% blocks executed 56%
+        3:  149:void ProbRepository::del(const Activity &activity) {
+        3:  150:    if(probability > 0.5){
+        3:  150-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  151:        throw Exception("Probability too high( >0.5)");
+        1:  151-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  151-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  151-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  151-block  3
+call   11 never executed
+    $$$$$:  151-block  4
+    $$$$$:  151-block  5
+call   12 never executed
+    $$$$$:  151-block  6
+    $$$$$:  151-block  7
+call   13 never executed
+        -:  152:    }
+        2:  153:    auto iter = activities.find(activity.getTitle());
+        2:  153-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  153-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  153-block  2
+call    6 returned 2
+    $$$$$:  153-block  3
+call    7 never executed
+    $$$$$:  153-block  4
+        2:  154:    if(iter == activities.end()){
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  155:        throw Exception("non existing activity\n");
+        1:  155-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  155-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  155-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  155-block  3
+call   11 never executed
+    $$$$$:  155-block  4
+    $$$$$:  155-block  5
+call   12 never executed
+    $$$$$:  155-block  6
+    $$$$$:  155-block  7
+call   13 never executed
+        -:  156:    }
+        1:  157:    activities.erase(iter);
+        1:  157-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158:}
+        1:  158-block  0
+        -:  159:
+        -:  160:/// Modify from second repo
+        -:  161:/// \param activity
+function _ZN14ProbRepository6modifyERK8Activity called 3 returned 33% blocks executed 55%
+        3:  162:void ProbRepository::modify(const Activity &activity) {
+        3:  163:    if(probability > 0.5){
+        3:  163-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  164:        throw Exception("Probability too high( >0.5)");
+        1:  164-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  164-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  164-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  164-block  3
+call   11 never executed
+    $$$$$:  164-block  4
+    $$$$$:  164-block  5
+call   12 never executed
+    $$$$$:  164-block  6
+    $$$$$:  164-block  7
+call   13 never executed
+        -:  165:    }
+        2:  166:    auto iter = activities.find(activity.getTitle());
+        2:  166-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  166-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  166-block  2
+call    6 returned 2
+    $$$$$:  166-block  3
+call    7 never executed
+    $$$$$:  166-block  4
+        2:  167:    if(iter == activities.end()){
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  168:        throw Exception("non existing activity\n");
+        1:  168-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  168-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  168-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  168-block  3
+call   11 never executed
+    $$$$$:  168-block  4
+    $$$$$:  168-block  5
+call   12 never executed
+    $$$$$:  168-block  6
+    $$$$$:  168-block  7
+call   13 never executed
+        -:  169:    }
+        1:  170:    activities[activity.getTitle()] = activity;
+        1:  170-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  170-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  170-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  170-block  3
+call    9 returned 1
+    $$$$$:  170-block  4
+call   10 never executed
+    $$$$$:  170-block  5
+        1:  171:}
+        -:  172:
+        -:  173:/// Get all elements from second repo
+        -:  174:/// \return vector
+function _ZN14ProbRepository6getAllEv called 2 returned 50% blocks executed 66%
+        2:  175:const vector<Activity> &ProbRepository::getAll() {
+        2:  176:    if(probability > 0.5){
+        2:  176-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  177:        throw Exception("Probability too high( >0.5)");
+        1:  177-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  177-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  177-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  177-block  3
+call   11 never executed
+    $$$$$:  177-block  4
+    $$$$$:  177-block  5
+call   12 never executed
+    $$$$$:  177-block  6
+    $$$$$:  177-block  7
+call   13 never executed
+        -:  178:    }
+        1:  179:    all.clear();
+        1:  179-block  0
+call    0 returned 1
+        2:  180:    for (const auto& activity: activities)
+call    0 returned 1
+call    1 returned 1
+        1:  180-block  0
+call    2 returned 1
+        2:  180-block  1
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        1:  181:        all.push_back((Activity)activity.second);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  181-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  181-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  181-block  2
+call    8 never executed
+    $$$$$:  181-block  3
+        1:  182:    return all;
+        1:  182-block  0
+        1:  182-block  1
+        -:  183:}
+        -:  184:
+        -:  185:/// Search an element in second repo
+        -:  186:/// \param title
+        -:  187:/// \return
+function _ZN14ProbRepository6searchERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 33% blocks executed 59%
+        3:  188:const Activity &ProbRepository::search(const string &title) {
+        3:  189:    if(probability > 0.5){
+        3:  189-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  190:        throw Exception("Probability too high( >0.5)");
+        1:  190-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  190-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  190-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  190-block  3
+call   11 never executed
+    $$$$$:  190-block  4
+    $$$$$:  190-block  5
+call   12 never executed
+    $$$$$:  190-block  6
+    $$$$$:  190-block  7
+call   13 never executed
+        -:  191:    }
+        2:  192:    auto iter = activities.find(title);
+        2:  192-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  193:    if(iter == activities.end()){
+        2:  193-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  194:        throw Exception("non existing activity\n");
+        1:  194-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  194-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  194-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  194-block  3
+call   11 never executed
+    $$$$$:  194-block  4
+    $$$$$:  194-block  5
+call   12 never executed
+    $$$$$:  194-block  6
+    $$$$$:  194-block  7
+call   13 never executed
+        -:  195:    }
+        1:  196:    return activities[title];
+        1:  196-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  196-block  1
+        1:  196-block  2
+        -:  197:}
+        -:  198:
+        -:  199:
+        -:  200://tests
+function _Z13testLoadWritev called 1 returned 100% blocks executed 60%
+        1:  201:void testLoadWrite(){
+        -:  202:
+        1:  203:    FileRepository frepository;
+        1:  203-block  0
+call    0 returned 1
+        1:  204:    frepository.setFile("test_current_activities.txt");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  204-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  204-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  204-block  2
+call    9 never executed
+    $$$$$:  204-block  3
+    $$$$$:  204-block  4
+call   10 never executed
+    $$$$$:  204-block  5
+        1:  205:    frepository.add(Activity("a","a","a",1));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  205-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  205-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  205-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  205-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  205-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:  205-block  5
+call   25 never executed
+    $$$$$:  205-block  6
+    $$$$$:  205-block  7
+call   26 never executed
+    $$$$$:  205-block  8
+    $$$$$:  205-block  9
+call   27 never executed
+    $$$$$:  205-block 10
+    $$$$$:  205-block 11
+call   28 never executed
+    $$$$$:  205-block 12
+    $$$$$:  205-block 13
+call   29 never executed
+    $$$$$:  205-block 14
+    $$$$$:  205-block 15
+call   30 never executed
+    $$$$$:  205-block 16
+    $$$$$:  205-block 17
+call   31 never executed
+    $$$$$:  205-block 18
+       1*:  206:    assert(frepository.getAll().size() == 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  206-block  0
+call    4 never executed
+        1:  207:    frepository.clearFile();
+        1:  207-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  208:
+        1:  209:    frepository.setFile("non_existing_file.txt");
+        1:  209-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  209-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  209-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  209-block  3
+call    9 never executed
+    $$$$$:  209-block  4
+    $$$$$:  209-block  5
+call   10 never executed
+    $$$$$:  209-block  6
+        -:  210:
+        -:  211:    try {
+        1:  212:        frepository.clearFile();
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  213:    } catch (Exception &exception) {
+        1:  213-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  213-block  1
+call    2 returned 1
+        1:  214:        assert(exception.getMessage() == "Unable to open file non_existing_file.txt");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  214-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  214-block  1
+call    6 never executed
+        1:  214-block  2
+call    7 returned 1
+        1:  215:    }
+call    0 returned 1
+    $$$$$:  215-block  0
+call    1 never executed
+        -:  216:    try {
+       8*:  217:        frepository.add(Activity("b","a","a",1));
+        1:  217-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  217-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  217-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  217-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  217-block  4
+call   15 returned 1
+branch 16 taken 0 (fallthrough)
+branch 17 taken 1 (throw)
+    %%%%%:  217-block  5
+call   18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  217-block  6
+call   25 returned 1
+        1:  217-block  7
+        1:  217-block  8
+call   26 returned 1
+        1:  217-block  9
+        1:  217-block 10
+call   27 returned 1
+        1:  217-block 11
+        1:  217-block 12
+call   28 returned 1
+        1:  217-block 13
+        1:  217-block 14
+call   29 returned 1
+        1:  217-block 15
+        1:  217-block 16
+call   30 returned 1
+        1:  217-block 17
+        1:  217-block 18
+call   31 returned 1
+        1:  217-block 19
+        1:  218:    } catch (Exception &exception) {
+        1:  218-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  218-block  1
+call    2 returned 1
+        1:  219:        assert(exception.getMessage() == "Unable to open file non_existing_file.txt");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  219-block  1
+call    6 never executed
+        1:  219-block  2
+call    7 returned 1
+        1:  220:    }
+call    0 returned 1
+    $$$$$:  220-block  0
+call    1 never executed
+        -:  221:
+        -:  222:
+        1:  223:}
+        1:  223-block  0
+call    0 returned 1
+    $$$$$:  223-block  1
+call    1 never executed
+        -:  224:
+function _Z7testAddv called 1 returned 100% blocks executed 58%
+        1:  225:void testAdd(){
+        1:  226:    Repository repository;
+        1:  226-block  0
+call    0 returned 1
+        2:  227:    Activity activity("A", "b", "c", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  227-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  227-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  227-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  227-block  3
+    $$$$$:  227-block  4
+    $$$$$:  227-block  5
+    $$$$$:  227-block  6
+    $$$$$:  227-block  7
+    $$$$$:  227-block  8
+        1:  228:    repository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  229:
+        -:  230:    try {
+        1:  231:        repository.add(activity);
+        1:  231-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  232:    } catch (Exception &exception) {
+        1:  232-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  232-block  1
+call    2 returned 1
+        1:  233:        assert(exception.getMessage() == "existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  233-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  233-block  1
+call    6 never executed
+        1:  233-block  2
+call    7 returned 1
+        1:  234:    }
+call    0 returned 1
+    $$$$$:  234-block  0
+call    1 never executed
+        -:  235:
+        -:  236:
+        1:  237:    FileRepository frepository;
+        1:  237-block  0
+call    0 returned 1
+        1:  238:    frepository.setFile("test_current_activities.txt");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  238-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  238-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  238-block  2
+call    9 never executed
+    $$$$$:  238-block  3
+    $$$$$:  238-block  4
+call   10 never executed
+    $$$$$:  238-block  5
+        1:  239:    frepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  240:    assert(frepository.getAll().size() == 1);
+        1:  240-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  240-block  1
+call    4 never executed
+        -:  241:
+        -:  242:    try {
+        1:  243:        frepository.add(activity);
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  244:    } catch (Exception &exception) {
+        1:  244-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  244-block  1
+call    2 returned 1
+        1:  245:        assert(exception.getMessage() == "existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  245-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  245-block  1
+call    6 never executed
+        1:  245-block  2
+call    7 returned 1
+        1:  246:    }
+call    0 returned 1
+    $$$$$:  246-block  0
+call    1 never executed
+        1:  247:    frepository.clearFile();
+        1:  247-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  248:
+        1:  249:    ProbRepository probRepository(0.5);
+        1:  249-block  0
+call    0 returned 1
+        1:  250:    probRepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  251:    assert(probRepository.getAll().size() == 1);
+        1:  251-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  251-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  251-block  2
+call    6 never executed
+        -:  252:
+        -:  253:    try {
+        1:  254:        probRepository.add(activity);
+        1:  254-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  255:    } catch (Exception &exception) {
+        1:  255-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  255-block  1
+call    2 returned 1
+        1:  256:        assert(exception.getMessage() == "existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  256-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  256-block  1
+call    6 never executed
+        1:  256-block  2
+call    7 returned 1
+        1:  257:    }
+call    0 returned 1
+    $$$$$:  257-block  0
+call    1 never executed
+        -:  258:
+        1:  259:    ProbRepository probRepository2(1);
+        1:  259-block  0
+call    0 returned 1
+        -:  260:    try {
+        1:  261:        probRepository2.add(activity);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  262:    } catch (Exception &exception) {
+        1:  262-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  262-block  1
+call    2 returned 1
+        1:  263:        assert(exception.getMessage() == "Probability too high( >0.5)");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  263-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  263-block  1
+call    6 never executed
+        1:  263-block  2
+call    7 returned 1
+        1:  264:    }
+call    0 returned 1
+    $$$$$:  264-block  0
+call    1 never executed
+        1:  265:}
+        1:  265-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  265-block  1
+call    5 never executed
+    $$$$$:  265-block  2
+call    6 never executed
+    $$$$$:  265-block  3
+call    7 never executed
+    $$$$$:  265-block  4
+call    8 never executed
+    $$$$$:  265-block  5
+call    9 never executed
+        -:  266:
+        -:  267:
+function _Z7testDelv called 1 returned 100% blocks executed 54%
+        1:  268:void testDel() {
+        1:  269:    Repository repository;
+        1:  269-block  0
+call    0 returned 1
+        2:  270:    Activity activity("A", "b", "c", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  270-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  270-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  270-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  270-block  3
+    $$$$$:  270-block  4
+    $$$$$:  270-block  5
+    $$$$$:  270-block  6
+    $$$$$:  270-block  7
+    $$$$$:  270-block  8
+        1:  271:    repository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  272:
+        2:  273:    Activity activity1("x", "y", "z", 2);
+        1:  273-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  273-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  273-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  273-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  273-block  4
+    $$$$$:  273-block  5
+    $$$$$:  273-block  6
+    $$$$$:  273-block  7
+    $$$$$:  273-block  8
+    $$$$$:  273-block  9
+        -:  274:
+        -:  275:    try {
+        1:  276:        repository.del(activity1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  277:    } catch (Exception &exception) {
+        1:  277-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  277-block  1
+call    2 returned 1
+        1:  278:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  278-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  278-block  1
+call    6 never executed
+        1:  278-block  2
+call    7 returned 1
+        1:  279:    }
+call    0 returned 1
+    $$$$$:  279-block  0
+call    1 never executed
+        -:  280:
+       1*:  281:    assert(repository.getPosition(activity1) == -1);
+        1:  281-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  281-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  281-block  2
+call    5 never executed
+        -:  282:
+        1:  283:    repository.del(activity);
+        1:  283-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  284:    const auto &activities = repository.getAll();
+        1:  284-block  0
+call    0 returned 1
+       1*:  285:    assert(activities.empty());
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  285-block  0
+call    3 never executed
+        -:  286:
+        -:  287:    try {
+        1:  288:        repository.del(activity);
+        1:  288-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  289:    } catch (Exception &exception) {
+        1:  289-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  289-block  1
+call    2 returned 1
+        1:  290:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  290-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  290-block  1
+call    6 never executed
+        1:  290-block  2
+call    7 returned 1
+        1:  291:    }
+call    0 returned 1
+    $$$$$:  291-block  0
+call    1 never executed
+        2:  292:    Activity activity2("B", "b", "c", 3);
+        1:  292-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  292-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  292-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  292-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  292-block  4
+    $$$$$:  292-block  5
+    $$$$$:  292-block  6
+    $$$$$:  292-block  7
+    $$$$$:  292-block  8
+    $$$$$:  292-block  9
+        1:  293:    repository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  294:    repository.add(activity1);
+        1:  294-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  295:    repository.add(activity2);
+        1:  295-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  296:    repository.del(activity1);
+        1:  296-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  297:
+        -:  298:
+        1:  299:    FileRepository frepository;
+        1:  299-block  0
+call    0 returned 1
+        1:  300:    frepository.setFile("test_current_activities.txt");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  300-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  300-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  300-block  2
+call    9 never executed
+    $$$$$:  300-block  3
+    $$$$$:  300-block  4
+call   10 never executed
+    $$$$$:  300-block  5
+        1:  301:    frepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  302:
+        1:  303:    frepository.del(activity);
+        1:  303-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  304:    assert(frepository.getAll().empty());
+        1:  304-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  304-block  1
+call    4 never executed
+        -:  305:
+        -:  306:    try {
+        1:  307:        frepository.del(activity);
+        1:  307-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  308:    } catch (Exception &exception) {
+        1:  308-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  308-block  1
+call    2 returned 1
+        1:  309:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  309-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  309-block  1
+call    6 never executed
+        1:  309-block  2
+call    7 returned 1
+        1:  310:    }
+call    0 returned 1
+    $$$$$:  310-block  0
+call    1 never executed
+        -:  311:
+        1:  312:    frepository.clearFile();
+        1:  312-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  313:
+        1:  314:    ProbRepository probRepository(0.5);
+        1:  314-block  0
+call    0 returned 1
+        1:  315:    probRepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  316:
+        1:  317:    probRepository.del(activity);
+        1:  317-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  318:
+        -:  319:    try {
+        1:  320:        probRepository.del(activity);
+        1:  320-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  321:    } catch (Exception &exception) {
+        1:  321-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  321-block  1
+call    2 returned 1
+        1:  322:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  322-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  322-block  1
+call    6 never executed
+        1:  322-block  2
+call    7 returned 1
+        1:  323:    }
+call    0 returned 1
+    $$$$$:  323-block  0
+call    1 never executed
+        -:  324:
+        1:  325:    ProbRepository probRepository2(1);
+        1:  325-block  0
+call    0 returned 1
+        -:  326:    try {
+        1:  327:        probRepository2.del(activity);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  328:    } catch (Exception &exception) {
+        1:  328-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  328-block  1
+call    2 returned 1
+        1:  329:        assert(exception.getMessage() == "Probability too high( >0.5)");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  329-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  329-block  1
+call    6 never executed
+        1:  329-block  2
+call    7 returned 1
+        1:  330:    }
+call    0 returned 1
+    $$$$$:  330-block  0
+call    1 never executed
+        1:  331:}
+        1:  331-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:  331-block  1
+call    7 never executed
+    $$$$$:  331-block  2
+call    8 never executed
+    $$$$$:  331-block  3
+call    9 never executed
+    $$$$$:  331-block  4
+call   10 never executed
+    $$$$$:  331-block  5
+call   11 never executed
+    $$$$$:  331-block  6
+call   12 never executed
+    $$$$$:  331-block  7
+call   13 never executed
+        -:  332:
+function _Z10testModifyv called 1 returned 100% blocks executed 54%
+        1:  333:void testModify() {
+        1:  334:    Repository repository;
+        1:  334-block  0
+call    0 returned 1
+        2:  335:    Activity activity("A", "b", "c", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  335-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  335-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  335-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  335-block  3
+    $$$$$:  335-block  4
+    $$$$$:  335-block  5
+    $$$$$:  335-block  6
+    $$$$$:  335-block  7
+    $$$$$:  335-block  8
+        1:  336:    repository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  337:
+        2:  338:    Activity activity1("A", "y", "z", 2);
+        1:  338-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  338-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  338-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  338-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  338-block  4
+    $$$$$:  338-block  5
+    $$$$$:  338-block  6
+    $$$$$:  338-block  7
+    $$$$$:  338-block  8
+    $$$$$:  338-block  9
+        2:  339:    Activity activity2("c", "d", "e", 4);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  339-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  339-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  339-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  339-block  3
+    $$$$$:  339-block  4
+    $$$$$:  339-block  5
+    $$$$$:  339-block  6
+    $$$$$:  339-block  7
+    $$$$$:  339-block  8
+        -:  340:
+        -:  341:    try {
+        1:  342:        repository.modify(activity2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  343:    } catch (Exception &exception) {
+        1:  343-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  343-block  1
+call    2 returned 1
+        1:  344:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  344-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  344-block  1
+call    6 never executed
+        1:  344-block  2
+call    7 returned 1
+        1:  345:    }
+call    0 returned 1
+    $$$$$:  345-block  0
+call    1 never executed
+        -:  346:
+        1:  347:    repository.modify(activity1);
+        1:  347-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  348:    auto activities = repository.getAll();
+        1:  348-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  349:    auto activities1 = repository.getAll();
+        1:  349-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  350:    activities1 = activities;
+        1:  350-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  351:    auto i = repository.getPosition(activity1);
+        1:  351-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  352:    assert(activity1 == activities[i]);
+        1:  352-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  352-block  1
+call    4 never executed
+        -:  353:
+        1:  354:    FileRepository frepository;
+        1:  354-block  0
+call    0 returned 1
+        1:  355:    frepository.setFile("test_current_activities.txt");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  355-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  355-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  355-block  2
+call    9 never executed
+    $$$$$:  355-block  3
+    $$$$$:  355-block  4
+call   10 never executed
+    $$$$$:  355-block  5
+        1:  356:    frepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  357:
+        -:  358:    try {
+        1:  359:        frepository.modify(activity2);
+        1:  359-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  360:    } catch (Exception &exception) {
+        1:  360-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  360-block  1
+call    2 returned 1
+        1:  361:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  361-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  361-block  1
+call    6 never executed
+        1:  361-block  2
+call    7 returned 1
+        1:  362:    }
+call    0 returned 1
+    $$$$$:  362-block  0
+call    1 never executed
+        1:  363:    frepository.modify(activity1);
+        1:  363-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  364:
+        1:  365:    activities = frepository.getAll();
+        1:  365-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  366:    i = frepository.getPosition(activity1);
+        1:  366-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  367:    assert(activity1 == activities[i]);
+        1:  367-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  367-block  1
+call    4 never executed
+        1:  368:    frepository.clearFile();
+        1:  368-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  369:
+        1:  370:    ProbRepository probRepository(0.5);
+        1:  370-block  0
+call    0 returned 1
+        1:  371:    probRepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  372:
+        1:  373:    probRepository.modify(activity1);
+        1:  373-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  374:
+        -:  375:    try {
+        1:  376:        probRepository.modify(activity2);
+        1:  376-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  377:    } catch (Exception &exception) {
+        1:  377-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  377-block  1
+call    2 returned 1
+        1:  378:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  378-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  378-block  1
+call    6 never executed
+        1:  378-block  2
+call    7 returned 1
+        1:  379:    }
+call    0 returned 1
+    $$$$$:  379-block  0
+call    1 never executed
+        -:  380:
+        1:  381:    ProbRepository probRepository2(1);
+        1:  381-block  0
+call    0 returned 1
+        -:  382:    try {
+        1:  383:        probRepository2.modify(activity);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  384:    } catch (Exception &exception) {
+        1:  384-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  384-block  1
+call    2 returned 1
+        1:  385:        assert(exception.getMessage() == "Probability too high( >0.5)");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  385-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  385-block  1
+call    6 never executed
+        1:  385-block  2
+call    7 returned 1
+        1:  386:    }
+call    0 returned 1
+    $$$$$:  386-block  0
+call    1 never executed
+        1:  387:}
+        1:  387-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  387-block  1
+call    9 never executed
+    $$$$$:  387-block  2
+call   10 never executed
+    $$$$$:  387-block  3
+call   11 never executed
+    $$$$$:  387-block  4
+call   12 never executed
+    $$$$$:  387-block  5
+call   13 never executed
+    $$$$$:  387-block  6
+call   14 never executed
+    $$$$$:  387-block  7
+call   15 never executed
+    $$$$$:  387-block  8
+call   16 never executed
+    $$$$$:  387-block  9
+call   17 never executed
+        -:  388:
+function _Z10testSearchv called 1 returned 100% blocks executed 59%
+        1:  389:void testSearch() {
+        1:  390:    Repository repository;
+        1:  390-block  0
+call    0 returned 1
+        2:  391:    Activity activity("A", "b", "c", 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  391-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  391-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  391-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+    $$$$$:  391-block  3
+    $$$$$:  391-block  4
+    $$$$$:  391-block  5
+    $$$$$:  391-block  6
+    $$$$$:  391-block  7
+    $$$$$:  391-block  8
+        1:  392:    repository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  393:    Activity activityFound = repository.search("A");
+        1:  393-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  393-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  393-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+    $$$$$:  393-block  3
+    $$$$$:  393-block  4
+       1*:  394:    assert(activityFound == activity);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  394-block  0
+call    3 never executed
+        -:  395:
+        -:  396:    try {
+       3*:  397:        repository.search("B");
+        1:  397-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  397-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  397-block  2
+call    7 never executed
+call    8 never executed
+        1:  397-block  3
+call    9 returned 1
+        1:  397-block  4
+        1:  397-block  5
+call   10 returned 1
+        1:  397-block  6
+        1:  398:    } catch (Exception &exception) {
+        1:  398-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  398-block  1
+call    2 returned 1
+        1:  399:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  399-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  399-block  1
+call    6 never executed
+        1:  399-block  2
+call    7 returned 1
+        1:  400:    }
+call    0 returned 1
+    $$$$$:  400-block  0
+call    1 never executed
+        -:  401:
+        1:  402:    ProbRepository probRepository(0.5);
+        1:  402-block  0
+call    0 returned 1
+        1:  403:    probRepository.add(activity);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  404:
+        1:  405:    probRepository.search(activity.getTitle());
+        1:  405-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  405-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  405-block  2
+call    6 returned 1
+    $$$$$:  405-block  3
+call    7 never executed
+    $$$$$:  405-block  4
+        -:  406:
+        -:  407:    try {
+       3*:  408:        probRepository.search("faina");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  408-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  408-block  1
+call    7 never executed
+call    8 never executed
+        1:  408-block  2
+call    9 returned 1
+        1:  408-block  3
+        1:  408-block  4
+call   10 returned 1
+        1:  408-block  5
+        1:  409:    } catch (Exception &exception) {
+        1:  409-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  409-block  1
+call    2 returned 1
+        1:  410:        assert(exception.getMessage() == "non existing activity\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  410-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  410-block  1
+call    6 never executed
+        1:  410-block  2
+call    7 returned 1
+        1:  411:    }
+call    0 returned 1
+    $$$$$:  411-block  0
+call    1 never executed
+        -:  412:
+        1:  413:    ProbRepository probRepository2(1);
+        1:  413-block  0
+call    0 returned 1
+        -:  414:    try {
+       2*:  415:        probRepository2.search(activity.getTitle());
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  415-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:  415-block  1
+call    6 never executed
+        1:  415-block  2
+call    7 returned 1
+        1:  415-block  3
+        1:  416:    } catch (Exception &exception) {
+        1:  416-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  416-block  1
+call    2 returned 1
+        1:  417:        assert(exception.getMessage() == "Probability too high( >0.5)");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  417-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  417-block  1
+call    6 never executed
+        1:  417-block  2
+call    7 returned 1
+        1:  418:    }
+call    0 returned 1
+    $$$$$:  418-block  0
+call    1 never executed
+        -:  419:    try {
+        1:  420:        probRepository2.getAll();
+        1:  420-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  421:    } catch (Exception &exception) {
+        1:  421-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  421-block  1
+call    2 returned 1
+        1:  422:        assert(exception.getMessage() == "Probability too high( >0.5)");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  422-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  422-block  1
+call    6 never executed
+        1:  422-block  2
+call    7 returned 1
+        1:  423:    }
+call    0 returned 1
+    $$$$$:  423-block  0
+call    1 never executed
+        -:  424:
+        1:  425:}
+        1:  425-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  425-block  1
+call    5 never executed
+    $$$$$:  425-block  2
+call    6 never executed
+    $$$$$:  425-block  3
+call    7 never executed
+    $$$$$:  425-block  4
+call    8 never executed
+    $$$$$:  425-block  5
+call    9 never executed
+        -:  426:
+        -:  427:

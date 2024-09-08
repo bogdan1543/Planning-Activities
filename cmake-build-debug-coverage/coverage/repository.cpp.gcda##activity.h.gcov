@@ -1,0 +1,109 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/activity.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/repository.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_ACTIVITY_H
+        -:    6:#define LAB6_7_ACTIVITY_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:#include <iostream>
+        -:   10:#include "Exceptions.h"
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:class Validator {
+        -:   15:public:
+        -:   16:    void validateActivity(string title, string description, string type, int duration);
+        -:   17:};
+        -:   18:
+        -:   19:class Activity {
+        -:   20:private:
+        -:   21:    string title;
+        -:   22:    string description;
+        -:   23:    string type;
+        -:   24:    int duration;
+        -:   25:public:
+        -:   26:    string getTitle() const;
+        -:   27:
+        -:   28:    string getDescription() const;
+        -:   29:
+        -:   30:    string getType() const;
+        -:   31:
+        -:   32:    int getDuration() const;
+        -:   33:
+function _ZN8ActivityC2Ev called 2 returned 100% blocks executed 100%
+        2:   34:    Activity() = default;
+        2:   34-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        -:   35:
+function _ZN8ActivityC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_i called 39 returned 100% blocks executed 62%
+       39:   36:    Activity(string title, string description, string type, int duration) : title(title), description(description),
+       39:   36-block  0
+call    0 returned 39
+call    1 returned 39
+branch  2 taken 39 (fallthrough)
+branch  3 taken 0 (throw)
+       39:   37:                                                                            type(type), duration(duration) {}
+       39:   37-block  0
+call    0 returned 39
+branch  1 taken 39 (fallthrough)
+branch  2 taken 0 (throw)
+       39:   37-block  1
+    $$$$$:   37-block  2
+call    3 never executed
+    $$$$$:   37-block  3
+call    4 never executed
+        -:   38:
+function _ZN8ActivityC2ERKS_ called 150 returned 100% blocks executed 62%
+      150:   39:    Activity(const Activity &other): title(other.title), description(other.description), type(other.type), duration(other.duration) {}
+      150:   39-block  0
+call    0 returned 150
+call    1 returned 150
+branch  2 taken 150 (fallthrough)
+branch  3 taken 0 (throw)
+      150:   39-block  1
+call    4 returned 150
+branch  5 taken 150 (fallthrough)
+branch  6 taken 0 (throw)
+      150:   39-block  2
+    $$$$$:   39-block  3
+call    7 never executed
+    $$$$$:   39-block  4
+call    8 never executed
+        -:   40:
+        -:   41:
+        -:   42:
+        -:   43:
+function _ZN8ActivityeqERKS_ called 4 returned 100% blocks executed 91%
+        4:   44:    int operator==(const Activity &other){
+       4*:   45:        return other.title == title && other.description == description && other.type == type && other.duration == duration;
+        4:   45-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0
+        4:   45-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0
+        4:   45-block  2
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0
+        4:   45-block  3
+branch  9 taken 4 (fallthrough)
+branch 10 taken 0
+        4:   45-block  4
+    %%%%%:   45-block  5
+        4:   45-block  6
+        -:   46:    }
+        -:   47:};
+        -:   48:
+        -:   49:void testCreateActivity();
+        -:   50:
+        -:   51:#endif //LAB6_7_ACTIVITY_H

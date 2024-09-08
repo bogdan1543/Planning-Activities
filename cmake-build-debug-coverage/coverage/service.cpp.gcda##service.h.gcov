@@ -1,0 +1,99 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/service.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_SERVICE_H
+        -:    6:#define LAB6_7_SERVICE_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:#include <unordered_map>
+        -:   10:#include "repository.h"
+        -:   11:#include "export.h"
+        -:   12:#include "currentActivities.h"
+        -:   13:#include "undo.h"
+        -:   14:#include <memory>
+        -:   15:
+        -:   16:using namespace std;
+        -:   17:
+        -:   18:class Service {
+        -:   19:private:
+        -:   20:    AbsRepository &repo;
+        -:   21:
+        -:   22:    unordered_map<string, int> report;
+        -:   23:
+        -:   24:    currentActivities schedule;
+        -:   25:
+        -:   26:    //undo
+        -:   27:    vector<unique_ptr<Undo>> undoActions;
+        -:   28:public:
+function _ZN7ServiceC2ER13AbsRepository called 0 returned 0% blocks executed 0%
+    #####:   29:    Service(AbsRepository &repository) : repo(repository) {};
+    %%%%%:   29-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   30:
+        -:   31:    Service(const Service &other) = delete;
+        -:   32:
+        -:   33:    void serviceAdd(const string& title, const string& description, const string& type, int duration);
+        -:   34:
+        -:   35:    void serviceDelete(const string& title, const string& description, const string& type, int duration);
+        -:   36:
+        -:   37:    void serviceModify(const string& title, const string& description, const string& type, int duration);
+        -:   38:
+        -:   39:    const vector<Activity> &serviceGetAll();
+        -:   40:
+        -:   41:    Activity serviceSearch(const string& title);
+        -:   42:
+        -:   43:    vector<Activity> serviceGetFilteredByType(const string& type);
+        -:   44:
+        -:   45:    vector<Activity> serviceSortedByTitle();
+        -:   46:
+        -:   47:    vector<Activity> serviceSortedByDescription();
+        -:   48:
+        -:   49:    vector<Activity> serviceSortedByTypeAndDuration();
+        -:   50:
+        -:   51:    int serviceAddCurrentActivity(const string &title);
+        -:   52:
+        -:   53:    int serviceDeleteCurrentActivities();
+        -:   54:
+        -:   55:    int serviceGenerateCurrentActivities(int nr);
+        -:   56:
+        -:   57:    unordered_map<string, int> serviceTypeReport();
+        -:   58:
+        -:   59:    void serviceExportCurrentActivitiesToCVS(const string& fName) const;
+        -:   60:
+        -:   61:    void serviceExportCurrentActivitiesToHTML(const string& fName) const;
+        -:   62:
+        -:   63:    void serviceUndo();
+        -:   64:};
+        -:   65:
+        -:   66:void testServiceAdd();
+        -:   67:
+        -:   68:void testServiceDelete();
+        -:   69:
+        -:   70:void testServiceModify();
+        -:   71:
+        -:   72:void testServiceSearch();
+        -:   73:
+        -:   74:void testServiceFilter();
+        -:   75:
+        -:   76:void testSort();
+        -:   77:
+        -:   78:void testServiceAddCurrent();
+        -:   79:
+        -:   80:void testServiceDeleteCurrent();
+        -:   81:
+        -:   82:void testServiceGenerateCurrent();
+        -:   83:
+        -:   84:void testServiceReport();
+        -:   85:
+        -:   86:void testServiceExport();
+        -:   87:
+        -:   88:void testServiceUndo();
+        -:   89:
+        -:   90:#endif //LAB6_7_SERVICE_H

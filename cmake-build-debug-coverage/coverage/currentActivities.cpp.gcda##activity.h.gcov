@@ -1,0 +1,70 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/activity.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/currentActivities.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/currentActivities.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_ACTIVITY_H
+        -:    6:#define LAB6_7_ACTIVITY_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:#include <iostream>
+        -:   10:#include "Exceptions.h"
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:class Validator {
+        -:   15:public:
+        -:   16:    void validateActivity(string title, string description, string type, int duration);
+        -:   17:};
+        -:   18:
+        -:   19:class Activity {
+        -:   20:private:
+        -:   21:    string title;
+        -:   22:    string description;
+        -:   23:    string type;
+        -:   24:    int duration;
+        -:   25:public:
+        -:   26:    string getTitle() const;
+        -:   27:
+        -:   28:    string getDescription() const;
+        -:   29:
+        -:   30:    string getType() const;
+        -:   31:
+        -:   32:    int getDuration() const;
+        -:   33:
+        -:   34:    Activity() = default;
+        -:   35:
+        -:   36:    Activity(string title, string description, string type, int duration) : title(title), description(description),
+        -:   37:                                                                            type(type), duration(duration) {}
+        -:   38:
+function _ZN8ActivityC2ERKS_ called 0 returned 0% blocks executed 0%
+    #####:   39:    Activity(const Activity &other): title(other.title), description(other.description), type(other.type), duration(other.duration) {}
+    %%%%%:   39-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   39-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   39-block  2
+    $$$$$:   39-block  3
+call    7 never executed
+    $$$$$:   39-block  4
+call    8 never executed
+        -:   40:
+        -:   41:
+        -:   42:
+        -:   43:
+        -:   44:    int operator==(const Activity &other){
+        -:   45:        return other.title == title && other.description == description && other.type == type && other.duration == duration;
+        -:   46:    }
+        -:   47:};
+        -:   48:
+        -:   49:void testCreateActivity();
+        -:   50:
+        -:   51:#endif //LAB6_7_ACTIVITY_H

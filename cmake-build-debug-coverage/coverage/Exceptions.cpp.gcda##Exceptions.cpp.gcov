@@ -1,0 +1,16 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/Exceptions.cpp
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/Exceptions.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/Exceptions.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#include "Exceptions.h"
+        -:    6:
+function _ZNK9Exception10getMessageB5cxx11Ev called 20 returned 100% blocks executed 100%
+       20:    7:string Exception::getMessage() const {
+       20:    8:    return msg;
+       20:    8-block  0
+call    0 returned 20
+        -:    9:}

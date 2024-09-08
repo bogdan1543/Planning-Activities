@@ -1,0 +1,132 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/repository.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_REPOSITORY_H
+        -:    6:#define LAB6_7_REPOSITORY_H
+        -:    7:
+        -:    8:#include <vector>
+        -:    9:#include "activity.h"
+        -:   10:#include "Exceptions.h"
+        -:   11://#include "vector.h"
+        -:   12:#include <unordered_map>
+        -:   13:
+        -:   14:using namespace std;
+        -:   15:
+        -:   16:class AbsRepository{
+        -:   17:public:
+function _ZN13AbsRepositoryC2Ev called 30 returned 100% blocks executed 100%
+       30:   18:    AbsRepository() = default;
+        -:   19:
+        -:   20:    AbsRepository(const AbsRepository &other) = delete;
+        -:   21:
+      30*:   22:    virtual ~AbsRepository() = default;
+------------------
+_ZN13AbsRepositoryD0Ev:
+function _ZN13AbsRepositoryD0Ev called 0 returned 0% blocks executed 0%
+    #####:   22:    virtual ~AbsRepository() = default;
+    %%%%%:   22-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN13AbsRepositoryD2Ev:
+function _ZN13AbsRepositoryD2Ev called 30 returned 100% blocks executed 100%
+       30:   22:    virtual ~AbsRepository() = default;
+------------------
+        -:   23:
+        -:   24:    virtual void add(const Activity &activity) = 0;
+        -:   25:
+        -:   26:    virtual void del(const Activity &activity) = 0;
+        -:   27:
+        -:   28:    virtual void modify(const Activity &activity) = 0;
+        -:   29:
+        -:   30:    virtual const vector<Activity> &getAll() = 0;
+        -:   31:
+        -:   32:    virtual const Activity& search(const string &title) = 0;
+        -:   33:};
+        -:   34:
+        -:   35:class Repository: public AbsRepository{
+        -:   36:private:
+        -:   37:    vector<Activity> activities;
+        -:   38:public:
+function _ZN10RepositoryC2Ev called 21 returned 100% blocks executed 100%
+       21:   39:    Repository() = default;
+       21:   39-block  0
+call    0 returned 21
+call    1 returned 21
+        -:   40:
+        -:   41:    Repository(const Repository &other) = delete;
+        -:   42:
+        -:   43:    void add(const Activity &activity) override;
+        -:   44:
+        -:   45:    void del(const Activity &activity) override;
+        -:   46:
+        -:   47:    void modify(const Activity &activity) override;
+        -:   48:
+        -:   49:    const vector<Activity> &getAll() override;
+        -:   50:
+        -:   51:    int getPosition(Activity &activity);
+        -:   52:
+        -:   53:    const Activity& search(const string &title) override;
+        -:   54:
+        -:   55:};
+        -:   56:
+        -:   57:class FileRepository: public Repository{
+        -:   58:private:
+        -:   59:    string filename;
+        -:   60:    void writeToFile();
+        -:   61:public:
+        -:   62:    explicit FileRepository(): Repository(){}
+        -:   63:    void clearFile();
+        -:   64:
+        -:   65:    void add(const Activity &activity) override;
+        -:   66:
+        -:   67:    void del(const Activity &activity) override;
+        -:   68:
+        -:   69:    void modify(const Activity &activity) override;
+        -:   70:
+        -:   71:    void setFile(const string& file);
+        -:   72:
+        -:   73:};
+        -:   74:
+        -:   75:class ProbRepository: public AbsRepository{
+        -:   76:private:
+        -:   77:    float probability;
+        -:   78:    unordered_map<string, Activity> activities;
+        -:   79:    vector<Activity> all;
+        -:   80:public:
+function _ZN14ProbRepositoryC2Ef called 9 returned 100% blocks executed 100%
+        9:   81:    explicit ProbRepository(float probability): AbsRepository(), probability(probability){}
+        9:   81-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        -:   82:
+        -:   83:    ProbRepository(const ProbRepository &other) = delete;
+        -:   84:
+        -:   85:    void add(const Activity &activity) override;
+        -:   86:
+        -:   87:    void del(const Activity &activity) override;
+        -:   88:
+        -:   89:    void modify(const Activity &activity) override;
+        -:   90:
+        -:   91:    const vector<Activity> &getAll() override;
+        -:   92:
+        -:   93:    const Activity& search(const string &title) override;
+        -:   94:};
+        -:   95:
+        -:   96:void testLoadWrite();
+        -:   97:
+        -:   98:void testAdd();
+        -:   99:
+        -:  100:void testDel();
+        -:  101:
+        -:  102:void testModify();
+        -:  103:
+        -:  104:void testSearch();
+        -:  105:
+        -:  106:#endif //LAB6_7_REPOSITORY_H

@@ -1,0 +1,1552 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/ui.cpp
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/ui.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/ui.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#include "ui.h"
+        -:    6:#include <iostream>
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+function _ZN2Ui3runEv called 0 returned 0% blocks executed 0%
+    #####:   10:void Ui::run() {
+    #####:   11:    int running = 1;
+    #####:   12:    while (running) {
+    %%%%%:   12-block  0
+    %%%%%:   12-block  1
+branch  0 never executed
+branch  1 never executed
+        -:   13:        cout << "1 Add\n"
+        -:   14:                "2 Delete\n"
+        -:   15:                "3 Modify\n"
+        -:   16:                "4 Print all\n"
+        -:   17:                "5 Search\n"
+        -:   18:                "6 Filter by type\n"
+        -:   19:                "7 Sort by attribute\n"
+        -:   20:                "8 Generate current activities\n"
+        -:   21:                "9 Print type raport current activities\n"
+        -:   22:                "10 Export current activities\n"
+        -:   23:                "11 Undo\n"
+        -:   24:                "0 Exit\n"
+    #####:   25:                "Command:";
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   26:        int cmd = 0;
+    #####:   27:        cin >> cmd;
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   28:        switch (cmd) {
+    %%%%%:   28-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+    #####:   29:            case 1:
+    #####:   30:                uiAddActivity();
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   31:                break;
+    %%%%%:   31-block  0
+    #####:   32:            case 2:
+    #####:   33:                uiDeleteActivity();
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   34:                break;
+    %%%%%:   34-block  0
+    #####:   35:            case 3:
+    #####:   36:                uiModifyActivity();
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   37:                break;
+    %%%%%:   37-block  0
+    #####:   38:            case 4:
+    #####:   39:                uiPrintAllActivities();
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   40:                break;
+    %%%%%:   40-block  0
+    #####:   41:            case 5:
+    #####:   42:                uiSearchActivity();
+    %%%%%:   42-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   43:                break;
+    %%%%%:   43-block  0
+    #####:   44:            case 6:
+    #####:   45:                uiFilterByActivityType();
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   46:                break;
+    %%%%%:   46-block  0
+    #####:   47:            case 7:
+    #####:   48:                uiSortActivities();
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   49:                break;
+    %%%%%:   49-block  0
+    #####:   50:            case 8:
+    #####:   51:                uiGenerateCurrentActivities();
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   52:                break;
+    %%%%%:   52-block  0
+    #####:   53:            case 9:
+    #####:   54:                uiActivitiesTypeReport();
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   55:                break;
+    %%%%%:   55-block  0
+    #####:   56:            case 10:
+    #####:   57:                uiExportCurrentActivities();
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   58:                break;
+    %%%%%:   58-block  0
+    #####:   59:            case 11:
+    #####:   60:                uiUndoActions();
+    %%%%%:   60-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   61:                break;
+    %%%%%:   61-block  0
+    #####:   62:            case 0:
+    #####:   63:                running = 0;
+    #####:   64:                break;
+    %%%%%:   64-block  0
+        -:   65:        }
+        -:   66:
+        -:   67:    }
+    #####:   68:}
+    %%%%%:   68-block  0
+        -:   69:
+function _ZN2Ui13uiAddActivityEv called 0 returned 0% blocks executed 0%
+    #####:   70:void Ui::uiAddActivity() {
+    #####:   71:    int command = 0;
+    #####:   72:    cout << "1 Add to list of activities\n2 Add to current list of activities\n";
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   73:    cout <<"Command:";
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:    cin >> command;
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:    if(command == 1){
+    %%%%%:   75-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   76:        string title, description, type;
+    %%%%%:   76-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   77:        int duration = 0;
+    #####:   78:        cout << "Title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:        cin >> title;
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:        cout << "Description: ";
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   81:        cin >> description;
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:        cout << "Type: ";
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   83:        cin >> type;
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   84:        cout << "Duration: ";
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:        cin >> duration;
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   86:
+        -:   87:        try {
+    #####:   88:            serv.serviceAdd(title, description, type, duration);
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:            cout << "Activity added\n";
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   90:        } catch (Exception &exception) {
+    $$$$$:   90-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   90-block  1
+call    2 never executed
+    =====:   91:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   91-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   91-block  1
+call    6 never executed
+    $$$$$:   91-block  2
+call    7 never executed
+    $$$$$:   91-block  3
+    =====:   92:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   92-block  0
+call    3 never executed
+    #####:   93:    }else if(command == 2){
+    %%%%%:   93-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    %%%%%:   93-block  1
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   93-block  2
+call    5 never executed
+    $$$$$:   93-block  3
+call    6 never executed
+    $$$$$:   93-block  4
+call    7 never executed
+    #####:   94:        string title;
+    %%%%%:   94-block  0
+call    0 never executed
+    #####:   95:        cout << "Title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   96:        cin >> title;
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   97:        try {
+    #####:   98:            auto size = serv.serviceAddCurrentActivity(title);
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   99:            cout << "Current activity added\n";
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  100:            cout << "Current activities' list size: "<< size <<'\n';
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  100-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  100-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  101:        } catch (Exception &exception) {
+    $$$$$:  101-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  101-block  1
+call    2 never executed
+    =====:  102:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  102-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  102-block  1
+call    6 never executed
+    $$$$$:  102-block  2
+call    7 never executed
+    $$$$$:  102-block  3
+    =====:  103:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  103-block  0
+call    3 never executed
+    #####:  104:    }else throw "invalid command\n";
+    %%%%%:  104-block  0
+call    0 never executed
+    %%%%%:  104-block  1
+call    1 never executed
+call    2 never executed
+    $$$$$:  104-block  2
+call    3 never executed
+        -:  105:
+        -:  106:
+    #####:  107:}
+    %%%%%:  107-block  0
+        -:  108:
+function _ZN2Ui20uiPrintAllActivitiesEv called 0 returned 0% blocks executed 0%
+    #####:  109:void Ui::uiPrintAllActivities() {
+        -:  110:    try{
+    #####:  111:        const auto &activities = serv.serviceGetAll();
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  112:        cout << "Number of activities: " << activities.size() << '\n';
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  112-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  112-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  113:        for (auto &activity: activities) {
+    %%%%%:  113-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  113-block  1
+call    2 never executed
+    %%%%%:  113-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  114:            cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  114-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  114-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  114-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  114-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  114-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  114-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  114-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  114-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  114-block  8
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+    $$$$$:  114-block  9
+call   31 never executed
+    $$$$$:  114-block 10
+    $$$$$:  114-block 11
+call   32 never executed
+    $$$$$:  114-block 12
+    $$$$$:  114-block 13
+call   33 never executed
+    $$$$$:  114-block 14
+    #####:  115:                 << activity.getDuration() << '\n';
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  115-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  115-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  116:        }
+    =====:  117:    }catch(Exception exception){
+    $$$$$:  117-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  117-block  1
+call    2 never executed
+call    3 never executed
+    =====:  118:        cout<<exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  118-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  118-block  1
+call    6 never executed
+    $$$$$:  118-block  2
+call    7 never executed
+    $$$$$:  118-block  3
+    =====:  119:    }
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  119-block  0
+call    4 never executed
+    $$$$$:  119-block  1
+call    5 never executed
+        -:  120:
+        -:  121:
+    #####:  122:}
+    %%%%%:  122-block  0
+        -:  123:
+function _ZN2Ui16uiDeleteActivityEv called 0 returned 0% blocks executed 0%
+    #####:  124:void Ui::uiDeleteActivity() {
+    #####:  125:    int command = 0;
+    #####:  126:    cout << "1 Delete an activity from list of activities\n2 Delete all current activities\n";
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  127:    cout <<"Command:";
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  128:    cin >> command;
+    %%%%%:  128-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  129:    if(command == 1){
+    %%%%%:  129-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  130:        string title, description, type;
+    %%%%%:  130-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  131:        int duration = 0;
+    #####:  132:        cout << "Title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  133:        cin >> title;
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  134:        cout << "Description: ";
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  135:        cin >> description;
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  136:        cout << "Type: ";
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  137:        cin >> type;
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  138:        cout << "Duration: ";
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  139:        cin >> duration;
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  140:
+        -:  141:        try {
+    #####:  142:            serv.serviceDelete(title, description, type, duration);
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  143:            cout << "Activity deleted\n";
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  144:        } catch (Exception &exception) {
+    $$$$$:  144-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  144-block  1
+call    2 never executed
+    =====:  145:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  145-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  145-block  1
+call    6 never executed
+    $$$$$:  145-block  2
+call    7 never executed
+    $$$$$:  145-block  3
+    =====:  146:        }
+call    0 never executed
+    $$$$$:  146-block  0
+call    1 never executed
+    #####:  147:    }else if(command == 2){
+    %%%%%:  147-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    %%%%%:  147-block  1
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  147-block  2
+call    5 never executed
+    $$$$$:  147-block  3
+call    6 never executed
+    $$$$$:  147-block  4
+call    7 never executed
+        -:  148:        try {
+    #####:  149:            auto size = serv.serviceDeleteCurrentActivities();
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  150:            cout << "Current activities deleted\n";
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  151:            cout << "Current activities' list size: "<< size <<'\n';
+    %%%%%:  151-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  151-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  151-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  152:        } catch (Exception &exception) {
+    $$$$$:  152-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  152-block  1
+call    2 never executed
+    =====:  153:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  153-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  153-block  1
+call    6 never executed
+    $$$$$:  153-block  2
+call    7 never executed
+    $$$$$:  153-block  3
+    =====:  154:        }
+call    0 never executed
+    $$$$$:  154-block  0
+call    1 never executed
+    #####:  155:    }else throw "invalid command\n";
+    %%%%%:  155-block  0
+call    0 never executed
+call    1 never executed
+        -:  156:
+    #####:  157:}
+    %%%%%:  157-block  0
+        -:  158:
+function _ZN2Ui16uiModifyActivityEv called 0 returned 0% blocks executed 0%
+    #####:  159:void Ui::uiModifyActivity() {
+    #####:  160:    string title, description, type;
+    %%%%%:  160-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  161:    int duration = 0;
+    #####:  162:    cout << "Title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  163:    cin >> title;
+    %%%%%:  163-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  164:    cout << "New description: ";
+    %%%%%:  164-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  165:    cin >> description;
+    %%%%%:  165-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  166:    cout << "New type: ";
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:    cin >> type;
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  168:    cout << "New duration: ";
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  169:    cin >> duration;
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  170:
+        -:  171:    try {
+    #####:  172:        serv.serviceModify(title, description, type, duration);
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  173:        cout << "Activity modified\n";
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  174:    } catch (Exception &exception) {
+    $$$$$:  174-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  174-block  1
+call    2 never executed
+    =====:  175:        cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  175-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  175-block  1
+call    6 never executed
+    $$$$$:  175-block  2
+call    7 never executed
+    $$$$$:  175-block  3
+    =====:  176:    }
+call    0 never executed
+    $$$$$:  176-block  0
+call    1 never executed
+    #####:  177:}
+    %%%%%:  177-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  177-block  1
+call    3 never executed
+    $$$$$:  177-block  2
+call    4 never executed
+    $$$$$:  177-block  3
+call    5 never executed
+        -:  178:
+function _ZN2Ui16uiSearchActivityEv called 0 returned 0% blocks executed 0%
+    #####:  179:void Ui::uiSearchActivity() {
+    #####:  180:    string title;
+    %%%%%:  180-block  0
+call    0 never executed
+    #####:  181:    cout << "Title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  182:    cin >> title;
+    %%%%%:  182-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  183:
+        -:  184:    try {
+    #####:  185:        Activity activity = serv.serviceSearch(title);
+    %%%%%:  185-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  186:        cout << "Activity found:\n";
+    %%%%%:  186-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  187:        cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+    %%%%%:  187-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  187-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  187-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  187-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  187-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  187-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  187-block  6
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  187-block  7
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  187-block  8
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  187-block  9
+call   27 never executed
+call   28 never executed
+call   29 never executed
+    $$$$$:  187-block 10
+call   30 never executed
+    $$$$$:  187-block 11
+    $$$$$:  187-block 12
+call   31 never executed
+    $$$$$:  187-block 13
+    $$$$$:  187-block 14
+call   32 never executed
+    $$$$$:  187-block 15
+    #####:  188:             << activity.getDuration() << '\n';
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  188-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  188-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  189:    } catch (Exception &exception) {
+call    0 never executed
+    $$$$$:  189-block  0
+call    1 never executed
+    $$$$$:  189-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  189-block  2
+call    4 never executed
+    =====:  190:        cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  190-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  190-block  1
+call    6 never executed
+    $$$$$:  190-block  2
+call    7 never executed
+    $$$$$:  190-block  3
+    =====:  191:    }
+call    0 never executed
+    $$$$$:  191-block  0
+call    1 never executed
+    #####:  192:}
+    %%%%%:  192-block  0
+call    0 never executed
+    $$$$$:  192-block  1
+call    1 never executed
+        -:  193:
+function _ZN2Ui22uiFilterByActivityTypeEv called 0 returned 0% blocks executed 0%
+    #####:  194:void Ui::uiFilterByActivityType(){
+    #####:  195:    string type;
+    %%%%%:  195-block  0
+call    0 never executed
+    #####:  196:    cout << "Type: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  197:    cin >> type;
+    %%%%%:  197-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  198:
+        -:  199:    try {
+    #####:  200:        const auto &activities = serv.serviceGetFilteredByType(type);
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  201:        for (auto &activity: activities) {
+    %%%%%:  201-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  201-block  1
+call    2 never executed
+    %%%%%:  201-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  202:            cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  202-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  202-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  202-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  202-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  202-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  202-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  202-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  202-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  202-block  8
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+    $$$$$:  202-block  9
+call   31 never executed
+    $$$$$:  202-block 10
+    $$$$$:  202-block 11
+call   32 never executed
+    $$$$$:  202-block 12
+    $$$$$:  202-block 13
+call   33 never executed
+    $$$$$:  202-block 14
+    #####:  203:                 << activity.getDuration() << '\n';
+    %%%%%:  203-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  203-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  203-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  204:        }
+        -:  205:
+    #####:  206:    } catch (Exception &exception) {
+    %%%%%:  206-block  0
+call    0 never executed
+    $$$$$:  206-block  1
+call    1 never executed
+    $$$$$:  206-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  206-block  3
+call    4 never executed
+    =====:  207:        cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  207-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  207-block  1
+call    6 never executed
+    $$$$$:  207-block  2
+call    7 never executed
+    $$$$$:  207-block  3
+    =====:  208:    }
+call    0 never executed
+    $$$$$:  208-block  0
+call    1 never executed
+    #####:  209:}
+    %%%%%:  209-block  0
+call    0 never executed
+    $$$$$:  209-block  1
+call    1 never executed
+        -:  210:
+function _ZN2Ui16uiSortActivitiesEv called 0 returned 0% blocks executed 0%
+    #####:  211:void Ui::uiSortActivities(){
+    #####:  212:    int command = 0;
+    #####:  213:    cout << "Sort by: \n1 Title\n2 Description\n3 Type and duration\n";
+    %%%%%:  213-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  214:    cout <<"Command:";
+    %%%%%:  214-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  215:    cin >> command;
+    %%%%%:  215-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  216:    if(command == 1){
+    %%%%%:  216-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  217:        const auto &activities = serv.serviceSortedByTitle();
+    %%%%%:  217-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  218:        for (auto &activity: activities) {
+    %%%%%:  218-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  218-block  1
+call    2 never executed
+    %%%%%:  218-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  219:            cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  219-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  219-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  219-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  219-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  219-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  219-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  219-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  219-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  219-block  8
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+    $$$$$:  219-block  9
+call   31 never executed
+    $$$$$:  219-block 10
+    $$$$$:  219-block 11
+call   32 never executed
+    $$$$$:  219-block 12
+    $$$$$:  219-block 13
+call   33 never executed
+    $$$$$:  219-block 14
+    #####:  220:                 << activity.getDuration() << '\n';
+    %%%%%:  220-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  220-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  220-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  221:        }
+    #####:  222:    }else if(command == 2){
+    %%%%%:  222-block  0
+call    0 never executed
+    %%%%%:  222-block  1
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  222-block  2
+call    3 never executed
+    #####:  223:        const auto &activities = serv.serviceSortedByDescription();
+    %%%%%:  223-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  224:        for (auto &activity: activities) {
+    %%%%%:  224-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  224-block  1
+call    2 never executed
+    %%%%%:  224-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  225:            cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  225-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  225-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  225-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  225-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  225-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  225-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  225-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  225-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  225-block  8
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+    $$$$$:  225-block  9
+call   31 never executed
+    $$$$$:  225-block 10
+    $$$$$:  225-block 11
+call   32 never executed
+    $$$$$:  225-block 12
+    $$$$$:  225-block 13
+call   33 never executed
+    $$$$$:  225-block 14
+    #####:  226:                 << activity.getDuration() << '\n';
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  226-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  226-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  227:        }
+    #####:  228:    }else if(command == 3){
+    %%%%%:  228-block  0
+call    0 never executed
+    %%%%%:  228-block  1
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  228-block  2
+call    3 never executed
+    #####:  229:        const auto &activities = serv.serviceSortedByTypeAndDuration();
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  230:        for (auto &activity: activities) {
+    %%%%%:  230-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  230-block  1
+call    2 never executed
+    %%%%%:  230-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  231:            cout << activity.getTitle() << " " << activity.getDescription() << " " << activity.getType() << " "
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  231-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  231-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  231-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  231-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  231-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  231-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  231-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  231-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  231-block  8
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+    $$$$$:  231-block  9
+call   31 never executed
+    $$$$$:  231-block 10
+    $$$$$:  231-block 11
+call   32 never executed
+    $$$$$:  231-block 12
+    $$$$$:  231-block 13
+call   33 never executed
+    $$$$$:  231-block 14
+    #####:  232:                 << activity.getDuration() << '\n';
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  232-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  232-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  233:        }
+    #####:  234:    }else throw "invalid command\n";
+    %%%%%:  234-block  0
+call    0 never executed
+    %%%%%:  234-block  1
+call    1 never executed
+call    2 never executed
+    $$$$$:  234-block  2
+call    3 never executed
+        -:  235:
+        -:  236:
+    #####:  237:}
+    %%%%%:  237-block  0
+        -:  238:
+function _ZN2Ui27uiGenerateCurrentActivitiesEv called 0 returned 0% blocks executed 0%
+    #####:  239:void Ui::uiGenerateCurrentActivities(){
+    #####:  240:    int nrGenerated = 0;
+    #####:  241:    cout << "Number of activities you want to generate: ";
+    %%%%%:  241-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  242:    cin >> nrGenerated;
+    %%%%%:  242-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  243:
+        -:  244:    try {
+    #####:  245:        auto size = serv.serviceGenerateCurrentActivities(nrGenerated);
+    %%%%%:  245-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  246:        cout << "Current activities generated\n";
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  247:        cout << "Current activities' list size: "<< size <<'\n';
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  247-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  247-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  248:    } catch (Exception &exception) {
+    $$$$$:  248-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  248-block  1
+call    2 never executed
+    =====:  249:        cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  249-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  249-block  1
+call    6 never executed
+    $$$$$:  249-block  2
+call    7 never executed
+    $$$$$:  249-block  3
+    =====:  250:    }
+call    0 never executed
+    $$$$$:  250-block  0
+call    1 never executed
+    #####:  251:}
+    %%%%%:  251-block  0
+        -:  252:
+function _ZN2Ui22uiActivitiesTypeReportEv called 0 returned 0% blocks executed 0%
+    #####:  253:void Ui::uiActivitiesTypeReport(){
+    #####:  254:    const auto &typeReport = serv.serviceTypeReport();
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  255:    for (auto &type: typeReport) {
+    %%%%%:  255-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  255-block  1
+call    2 never executed
+    %%%%%:  255-block  2
+call    3 never executed
+    %%%%%:  255-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  256:        cout << type.first << " " << type.second << " " << '\n';
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  256-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  256-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  256-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  256-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  257:    }
+        -:  258:
+    #####:  259:}
+    %%%%%:  259-block  0
+call    0 never executed
+    $$$$$:  259-block  1
+call    1 never executed
+        -:  260:
+        -:  261:
+function _ZN2Ui25uiExportCurrentActivitiesEv called 0 returned 0% blocks executed 0%
+    #####:  262:void Ui::uiExportCurrentActivities() {
+    #####:  263:    int fileType = 0;
+    #####:  264:    cout << "File type: \n1. HTML\n2. CVS\n";
+    %%%%%:  264-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  265:    cin >> fileType;
+    %%%%%:  265-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  266:
+    #####:  267:    if(fileType == 1){
+    %%%%%:  267-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  268:        string filename;
+    %%%%%:  268-block  0
+call    0 never executed
+    #####:  269:        cout << "File name: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  270:        cin >> filename;
+    %%%%%:  270-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  271:        try{
+    #####:  272:            serv.serviceExportCurrentActivitiesToHTML(filename);
+    %%%%%:  272-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  273:        }catch (Exception exception){
+    $$$$$:  273-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  273-block  1
+call    2 never executed
+call    3 never executed
+    =====:  274:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  274-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  274-block  1
+call    6 never executed
+    $$$$$:  274-block  2
+call    7 never executed
+    $$$$$:  274-block  3
+    =====:  275:        }
+call    0 never executed
+call    1 never executed
+    $$$$$:  275-block  0
+call    2 never executed
+    $$$$$:  275-block  1
+call    3 never executed
+    #####:  276:    }else{
+    %%%%%:  276-block  0
+call    0 never executed
+    $$$$$:  276-block  1
+call    1 never executed
+    #####:  277:        string filename;
+    %%%%%:  277-block  0
+call    0 never executed
+    #####:  278:        cout << "File name: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  279:        cin >> filename;
+    %%%%%:  279-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  280:        try{
+    #####:  281:            serv.serviceExportCurrentActivitiesToCVS(filename);
+    %%%%%:  281-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  282:        }catch (Exception exception){
+    $$$$$:  282-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  282-block  1
+call    2 never executed
+call    3 never executed
+    =====:  283:            cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  283-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  283-block  1
+call    6 never executed
+    $$$$$:  283-block  2
+call    7 never executed
+    $$$$$:  283-block  3
+    =====:  284:        }
+call    0 never executed
+call    1 never executed
+    $$$$$:  284-block  0
+call    2 never executed
+    $$$$$:  284-block  1
+call    3 never executed
+    #####:  285:    }
+    %%%%%:  285-block  0
+call    0 never executed
+    $$$$$:  285-block  1
+call    1 never executed
+    #####:  286:}
+    %%%%%:  286-block  0
+        -:  287:
+function _ZN2Ui13uiUndoActionsEv called 0 returned 0% blocks executed 0%
+    #####:  288:void Ui::uiUndoActions() {
+        -:  289:    try{
+    #####:  290:        serv.serviceUndo();
+    %%%%%:  290-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  291:    }catch (Exception exception){
+    $$$$$:  291-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  291-block  1
+call    2 never executed
+call    3 never executed
+    =====:  292:        cout << exception.getMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  292-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  292-block  1
+call    6 never executed
+    $$$$$:  292-block  2
+call    7 never executed
+    $$$$$:  292-block  3
+    =====:  293:    }
+call    0 never executed
+call    1 never executed
+    $$$$$:  293-block  0
+call    2 never executed
+    $$$$$:  293-block  1
+call    3 never executed
+    #####:  294:}
+    %%%%%:  294-block  0

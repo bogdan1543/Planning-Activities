@@ -1,0 +1,47 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/ui.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_UI_H
+        -:    6:#define LAB6_7_UI_H
+        -:    7:
+        -:    8:#include "service.h"
+        -:    9:
+        -:   10:class Ui {
+        -:   11:private:
+        -:   12:    Service &serv;
+        -:   13:public:
+function _ZN2UiC2ER7Service called 1 returned 100% blocks executed 100%
+        1:   14:    Ui(Service &service) : serv(service) {};
+        -:   15:
+        -:   16:    void run();
+        -:   17:
+        -:   18:    void uiAddActivity();
+        -:   19:
+        -:   20:    void uiDeleteActivity();
+        -:   21:
+        -:   22:    void uiPrintAllActivities();
+        -:   23:
+        -:   24:    void uiModifyActivity();
+        -:   25:
+        -:   26:    void uiSearchActivity();
+        -:   27:
+        -:   28:    void uiFilterByActivityType();
+        -:   29:
+        -:   30:    void uiSortActivities();
+        -:   31:
+        -:   32:    void uiGenerateCurrentActivities();
+        -:   33:
+        -:   34:    void uiActivitiesTypeReport();
+        -:   35:
+        -:   36:    void uiExportCurrentActivities();
+        -:   37:
+        -:   38:    void uiUndoActions();
+        -:   39:};
+        -:   40:
+        -:   41:
+        -:   42:#endif //LAB6_7_UI_H

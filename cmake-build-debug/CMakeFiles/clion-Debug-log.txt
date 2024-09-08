@@ -1,0 +1,6 @@
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug' && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/opt/Qt/6.7.0/gcc_64/lib/cmake -G 'CodeBlocks - Unix Makefiles' -S '/mnt/c/TEME C C++/OOP/lab6-7' -B '/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug'"
+-- Could NOT find XKB (missing: XKB_LIBRARY XKB_INCLUDE_DIR) (Required is at least version "0.5.0")
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug

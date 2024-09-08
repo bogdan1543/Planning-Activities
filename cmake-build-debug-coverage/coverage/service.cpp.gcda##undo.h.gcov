@@ -1,0 +1,98 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/undo.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB6_7_UNDO_H
+        -:    2:#define LAB6_7_UNDO_H
+        -:    3:
+        -:    4:#include "activity.h"
+        -:    5:#include "repository.h"
+        -:    6:
+        -:    7:class Undo{
+        -:    8:public:
+      27*:    9:    virtual ~Undo() = default;
+------------------
+_ZN4UndoD0Ev:
+function _ZN4UndoD0Ev called 0 returned 0% blocks executed 0%
+    #####:    9:    virtual ~Undo() = default;
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN4UndoD2Ev:
+function _ZN4UndoD2Ev called 27 returned 100% blocks executed 100%
+       27:    9:    virtual ~Undo() = default;
+------------------
+        -:   10:    virtual void doUndo() = 0;
+        -:   11:};
+        -:   12:
+        -:   13:class UndoAdd : public Undo{
+        -:   14:    Activity addedActivity;
+        -:   15:    AbsRepository& repo;
+        -:   16:public:
+function _ZN7UndoAddC2ER13AbsRepositoryRK8Activity called 23 returned 100% blocks executed 80%
+       23:   17:    UndoAdd(AbsRepository& repository, const Activity& activity): addedActivity(activity), repo(repository){}
+       23:   17-block  0
+call    0 returned 23
+call    1 returned 23
+branch  2 taken 23 (fallthrough)
+branch  3 taken 0 (throw)
+       23:   17-block  1
+    $$$$$:   17-block  2
+call    4 never executed
+        -:   18:
+function _ZN7UndoAdd6doUndoEv called 3 returned 100% blocks executed 100%
+        3:   19:    void doUndo() override{
+        3:   20:        repo.del(addedActivity);
+        3:   20-block  0
+call    0 returned 3
+        3:   21:    }
+        -:   22:};
+        -:   23:
+        -:   24:class UndoDelete : public Undo{
+        -:   25:    Activity deletedActivity;
+        -:   26:    AbsRepository& repo;
+        -:   27:public:
+function _ZN10UndoDeleteC2ER13AbsRepositoryRK8Activity called 2 returned 100% blocks executed 80%
+        2:   28:    UndoDelete(AbsRepository& repository, const Activity& activity): deletedActivity(activity), repo(repository){}
+        2:   28-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   28-block  1
+    $$$$$:   28-block  2
+call    4 never executed
+        -:   29:
+function _ZN10UndoDelete6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   30:    void doUndo() override{
+        1:   31:        repo.add(deletedActivity);
+        1:   31-block  0
+call    0 returned 1
+        1:   32:    }
+        -:   33:};
+        -:   34:
+        -:   35:class UndoModify : public Undo{
+        -:   36:    Activity modifiedActivity;
+        -:   37:    AbsRepository& repo;
+        -:   38:public:
+function _ZN10UndoModifyC2ER13AbsRepositoryRK8Activity called 2 returned 100% blocks executed 80%
+        2:   39:    UndoModify(AbsRepository& repository, const Activity& activity): modifiedActivity(activity), repo(repository){}
+        2:   39-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   39-block  1
+    $$$$$:   39-block  2
+call    4 never executed
+        -:   40:
+function _ZN10UndoModify6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   41:    void doUndo() override{
+        1:   42:        repo.modify(modifiedActivity);
+        1:   42-block  0
+call    0 returned 1
+        1:   43:    }
+        -:   44:};
+        -:   45:
+        -:   46:#endif //LAB6_7_UNDO_H

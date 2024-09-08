@@ -1,0 +1,30 @@
+        -:    0:Source:/mnt/c/TEME C C++/OOP/lab6-7/Exceptions.h
+        -:    0:Graph:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/activity.cpp.gcno
+        -:    0:Data:/mnt/c/TEME C C++/OOP/lab6-7/cmake-build-debug-coverage/CMakeFiles/lab6_7.dir/activity.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by bmaco on 03.04.2024.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_7_EXCEPTIONS_H
+        -:    6:#define LAB6_7_EXCEPTIONS_H
+        -:    7:
+        -:    8:#include <string>
+        -:    9:
+        -:   10:using namespace std;
+        -:   11:
+        -:   12:class Exception {
+        -:   13:private:
+        -:   14:    string msg;
+        -:   15:public:
+function _ZN9ExceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   16:    Exception(string msg) : msg(msg) {}
+    %%%%%:   16-block  0
+call    0 never executed
+        -:   17:
+        -:   18:    string getMessage() const;
+        -:   19:};
+        -:   20:
+        -:   21:
+        -:   22:
+        -:   23:#endif //LAB6_7_EXCEPTIONS_H
